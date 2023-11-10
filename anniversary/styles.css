@@ -1,0 +1,36 @@
+html{
+    background: #FF9494;
+}
+
+body{
+    font-family: monospace;
+    color: white;
+}
+
+.scroll{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.heading{
+    font-size: 5em;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.scrolling-text{
+    font-size: 2em;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.line {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.line.show {
+    opacity: 1;
+    transform: translateY(0);
+}
