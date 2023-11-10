@@ -9,6 +9,10 @@ body{
     text-shadow: 1px 1px 3px rgba(50, 50, 50, 0.5);
 }
 
+.hidden-audio{
+    display: none;
+}
+
 .scroll{
     text-align: center;
     width: 100%;
@@ -21,9 +25,9 @@ body{
     width: 100%;
 }
 
-.text-column{
-    font-size: 2em;
-    width: 50%;
+.container{
+    display: flex;
+    justify-content: space-between;
 }
 
 .line {
@@ -38,8 +42,9 @@ body{
     transform: translateY(0);
 }
 
-.hidden-audio{
-    display: none;
+.text-column{
+    font-size: 2em;
+    width: 50%;
 }
 
 .image-column{
@@ -57,7 +62,12 @@ body{
 
 }
 
-.container{
-    display: flex;
-    justify-content: space-between;
+#image2{
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5%;
+    border: 25px solid white;
+
 }
