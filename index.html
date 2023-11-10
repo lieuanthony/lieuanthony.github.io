@@ -26,10 +26,23 @@
     .open{
         font-size: 3em;
         margin-bottom:  25%;
+        cursor: pointer;
+    }
+
+    .heart-container{
+        margin-top: 5%;
+    }
+
+    .heart{
+        width: 30%;
+        height: auto;
     }
 </style>
 <body>
     <p class="notification">you have <b>1</b> new notification</p>
     <a class="open" onclick="window.location.href='letter.html'"><b><u>click here to open it!</u></b></a>
+    <div class="heart-container">
+        <img class="heart" src="images/heart.png">
+    </div>
 </body>
 </html>
