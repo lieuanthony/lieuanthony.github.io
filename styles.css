@@ -12,22 +12,22 @@ body{
 .scroll{
     text-align: center;
     width: 100%;
-    margin-top: 25px;
+    margin-top: 5%;
 }
 
 .heading{
     font-size: 5em;
     text-align: center;
     width: 100%;
-    margin-top: 25px;
 }
 
-.scrolling-text{
+.text-column{
     font-size: 2em;
     width: 50%;
 }
 
 .line {
+    margin-bottom: 5px;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s, transform 0.5s;
@@ -40,4 +40,24 @@ body{
 
 .hidden-audio{
     display: none;
+}
+
+.image-column{
+    width: 50%;
+    text-align: right;
+}
+
+#image1{
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5%;
+    border: 25px solid white;
+
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
 }
