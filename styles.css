@@ -6,7 +6,7 @@ body{
     font-family: monospace;
     color: white;
     text-align: center;
-    text-shadow: 1px 1px 3px rgba(50, 50, 50, 0.5);
+    text-shadow: 2px 2px 5px rgba(50, 50, 50, 0.5);
 }
 
 .hidden-audio{
@@ -59,26 +59,21 @@ body{
     margin: 0 auto;
     margin-top: 5%;
     border: 25px solid white;
+    box-shadow: 10px 10px 5px rgba(50, 50, 50, 0.5);;
 
 }
 
-#image2{
+#images{
     max-width: 50%;
     height: auto;
     display: block;
     margin: 0 auto;
     border: 25px solid white;
+    box-shadow: 10px 10px 5px rgba(50, 50, 50, 0.5);;
 
 }
 
-#dottedline1{
-    max-width: 25%;
-    margin-top: 2%;
-    margin-right: 35%;
-
-}
-
-#dottedline2{
+#dottedline{
     max-width: 25%;
     margin-top: 2%;
     margin-right: 35%;
