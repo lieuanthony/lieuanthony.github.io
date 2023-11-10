@@ -67,7 +67,20 @@ body{
     height: auto;
     display: block;
     margin: 0 auto;
-    margin-top: 5%;
     border: 25px solid white;
+
+}
+
+#dottedline1{
+    max-width: 25%;
+    margin-top: 2%;
+    margin-right: 35%;
+
+}
+
+#dottedline2{
+    max-width: 25%;
+    margin-top: 2%;
+    margin-right: 35%;
 
 }
