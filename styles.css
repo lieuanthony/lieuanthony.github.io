@@ -10,20 +10,22 @@ body{
 
 .scroll{
     text-align: center;
+    width: 100%;
     margin-top: 25px;
 }
 
 .heading{
     font-size: 5em;
     text-align: center;
+    width: 100%;
     margin-top: 25px;
 }
 
 .scrolling-text{
     font-size: 2em;
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .line {
