@@ -5,6 +5,7 @@ html{
 body{
     font-family: monospace;
     color: white;
+    text-align: center;
 }
 
 .scroll{
@@ -20,8 +21,9 @@ body{
 
 .scrolling-text{
     font-size: 2em;
-    margin-left: 300px;
-    margin-right: 300px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 .line {
