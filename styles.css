@@ -6,6 +6,7 @@ body{
     font-family: monospace;
     color: white;
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.5);
 }
 
 .scroll{
