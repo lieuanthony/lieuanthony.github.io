@@ -43,7 +43,7 @@ body{
 }
 
 .text-column{
-    font-size: 2em;
+    font-size: 30px;
     width: 50%;
 }
 
@@ -53,7 +53,7 @@ body{
 }
 
 #image1{
-    max-width: 65%;
+    max-width: 60%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -64,7 +64,7 @@ body{
 }
 
 #images{
-    max-width: 65%;
+    max-width: 60%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -74,12 +74,12 @@ body{
 }
 
 #dottedline{
-    max-width: 30%;
+    max-width: 25%;
     margin-top: 2%;
     margin-right: 35%;
 
 }
 
 #snoopy{
-    max-width: 30%;
+    max-width: 20%;
 }

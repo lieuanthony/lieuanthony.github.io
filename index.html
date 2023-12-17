@@ -20,13 +20,24 @@
 
     .notification{
         font-size: 1em;
-        margin-top: 25%;
+        margin-top: 22%;
     }
 
     .open{
         font-size: 3em;
-        margin-bottom:  25%;
         cursor: pointer;
+        color: white;
+        background-color: transparent;
+        border-color: white;
+        border-style: solid;
+        border-width: 5px;
+        padding: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .open:hover{
+        background-color: white;
+        color:#FF9494;
     }
 
     .heart-container{
@@ -40,7 +51,7 @@
 </style>
 <body>
     <p class="notification">you've got mail!</p>
-    <a class="open" onclick="window.location.href='letter.html'"><b><u>click here to open it!</u></b></a>
+    <button class="open" onclick="window.location.href='letter.html'"><b>open</b></button>
     <div class="heart-container">
         <img class="heart" src="images/heart.png">
     </div>
