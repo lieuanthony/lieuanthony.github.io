@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/images/letter.avif">
-    <title>to you</title>
+    <title>to you, from me</title>
 </head>
 <style>
     html{
@@ -18,12 +18,8 @@
         text-shadow: 1px 1px 3px rgba(50, 50, 50, 0.5);
     }
 
-    .notification{
-        font-size: 1em;
-        margin-top: 22%;
-    }
-
     .open{
+        margin-top: 25%;
         font-size: 3em;
         cursor: pointer;
         color: white;
@@ -32,6 +28,9 @@
         border-style: solid;
         border-width: 5px;
         padding: 10px;
+        box-shadow: 1px 1px 3px rgba(50, 50, 50, 0.5);;
+        text-shadow: 1px 1px 3px rgba(50, 50, 50, 0.5);
+        
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
@@ -40,20 +39,8 @@
         color:#FF9494;
     }
 
-    .heart-container{
-        margin-top: 5%;
-    }
-
-    .heart{
-        width: 30%;
-        height: auto;
-    }
 </style>
 <body>
-    <p class="notification">you've got mail!</p>
     <button class="open" onclick="window.location.href='letter.html'"><b>open</b></button>
-    <div class="heart-container">
-        <img class="heart" src="images/heart.png">
-    </div>
 </body>
 </html>
