@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('fonts/Demo_Fonts/Fontspring-DEMO-integralcf-bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow-x: hidden; 
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  background-color: transparent; 
+  z-index: 10; 
+  padding: 1rem; 
+}
+
+nav ul {
+  list-style: none; 
+  display: flex; 
+  justify-content: center; 
+}
+
+nav ul li {
+  margin: 0 15px; 
+}
+
+nav ul li a {
+  text-decoration: none; 
+  font-weight: bold; 
+  transition: color 0.5s ease; 
+  color: white; 
+  font-family: IntegralCF;
+  font-size: 1.5em;
+}
+
+nav ul li a.active {
+  color: red; /* Active section color */
+}
+
+.video-container {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; 
+  overflow: hidden;
+  z-index: -1; 
+}
+
+.video {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  min-width: 100%; 
+  min-height: 100%; 
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%); 
+}
+
+section {
+  width: 100vw; 
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black; 
+  position: relative; 
+}
+
+#about {
+  background: rgb(63,63,63);
+  background: linear-gradient(0deg, rgba(64,64,64,1) 0%, rgba(0,0,0,1) 100%); 
+}
+
+#projects {
+  background: rgb(127,127,127);
+  background: linear-gradient(0deg, rgba(127,127,127,1) 0%, rgba(63,63,63,1) 100%);
+}
+
+#classes {
+  background: rgb(191,191,191);
+  background: linear-gradient(0deg, rgba(191,191,191,1) 0%, rgba(128,128,128,1) 100%);
+}
+
+#contact {
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 100%);
+}
