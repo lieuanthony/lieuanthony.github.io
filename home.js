@@ -32,16 +32,19 @@ sections.forEach((section) => {
 
 const video = document.getElementById('backgroundVideo');
 
-// Set a flag to track the number of times the video has played
-let playCount = 0;
+// Set a flag to track if the video has played the first loop
+let hasPlayedOnce = false;
 
 // Event listener for when the video ends
 video.addEventListener('ended', () => {
-    playCount++;
-    if (playCount === 1) {
-        // Play without sound after the first loop
-        video.muted = true; // Mute the video
+    if (!hasPlayedOnce) {
+        hasPlayedOnce = true; // Mark that the video has played once
+        video.muted = true;   // Mute the video for subsequent loops
         video.currentTime = 0; // Reset the video to the start
-        video.play(); // Play the video again
+        video.play();         // Play the video again
+    } else {
+        // For subsequent loops, just reset and play silently
+        video.currentTime = 0; // Reset the video to the start
+        video.play();          // Play the video again
     }
 });
