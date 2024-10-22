@@ -29,3 +29,19 @@ const observer = new IntersectionObserver(changeNav, options);
 sections.forEach((section) => {
     observer.observe(section);
 });
+
+const video = document.getElementById('backgroundVideo');
+
+// Set a flag to track the number of times the video has played
+let playCount = 0;
+
+// Event listener for when the video ends
+video.addEventListener('ended', () => {
+    playCount++;
+    if (playCount === 1) {
+        // Play without sound after the first loop
+        video.muted = true; // Mute the video
+        video.currentTime = 0; // Reset the video to the start
+        video.play(); // Play the video again
+    }
+});
