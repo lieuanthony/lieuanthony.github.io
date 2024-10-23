@@ -95,9 +95,10 @@ section {
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 100%);
 }
 
+/* Existing styles remain unchanged */
+
 /* ----------- Responsive Styles for Mobile ----------- */
 @media (max-width: 768px) {
-
   /* Navigation on mobile */
   nav ul {
     flex-direction: column; /* Stack links vertically */
@@ -124,24 +125,28 @@ section {
     font-size: 2em; /* Resize section titles for smaller screens */
   }
 
+  /* Hide the video on mobile devices and set background color */
+  #video-container {
+    display: none; /* Hide the video container */
+  }
+
+  /* New black background for mobile devices */
+  #about, #projects, #interests, #contact {
+    background-color: black; /* Set black background for sections */
+  }
+
   /* Video container and scaling */
   #video-container {
     height: 100vh; /* Video container also full screen */
   }
 
   #backgroundVideo {
-    min-width: 100%; 
-    min-height: 100%;
-    width: 100%; 
-    height: auto;
-    object-fit: cover; /* Ensure the video covers the space */
-    transform: none; /* Remove the transform for mobile scaling */
+    display: none; /* Hide the video element */
   }
 }
 
 /* ----------- Extra small devices (max-width: 480px) ----------- */
 @media (max-width: 480px) {
-  
   nav ul li a {
     font-size: 1em; /* Further reduce nav link size for small phones */
   }
