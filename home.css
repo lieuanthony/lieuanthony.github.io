@@ -95,65 +95,53 @@ section {
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 100%);
 }
 
-/* Media queries for mobile devices */
 @media (max-width: 768px) {
+
   /* Adjust navigation for mobile */
   nav ul {
-    flex-direction: column; /* Stack the navigation vertically */
-    padding: 10px 0;
+    flex-direction: column; /* Stack nav links vertically on small screens */
+    align-items: center;
   }
 
   nav ul li {
-    margin: 10px 0; /* Space out the items vertically */
+    margin: 10px 0; /* Add space between items */
   }
 
   nav ul li a {
-    font-size: 1.2em; /* Reduce font size on smaller devices */
+    font-size: 1.2em; /* Reduce font size for better fit */
   }
 
-  /* Reduce section height for mobile */
+  /* Adjust section height for mobile */
   section {
-    height: auto; /* Let the content define the height instead of forcing 100vh */
-    padding: 20px; /* Add padding to avoid cramped text */
+    height: auto; /* Let content determine section height */
+    padding: 20px 10px; /* Add padding for better readability */
   }
 
-  /* Make sure video fits properly on smaller screens */
+  h1 {
+    font-size: 1.8rem; /* Adjust heading sizes for mobile */
+  }
+
+  /* Adjust video for mobile */
   #video-container {
     width: 100vw;
-    height: auto; /* Adjust for mobile screen height */
+    height: auto;
   }
 
   #backgroundVideo {
-    width: 100%; 
+    width: 100vw;
     height: auto; 
-    min-width: unset; /* Allow video to scale dynamically */
-    min-height: unset; /* Same for height */
-    object-fit: cover; /* Ensure it covers the container */
-    transform: none; /* Remove the transform for proper scaling */
-  }
-
-  /* Make text inside sections more readable */
-  h1 {
-    font-size: 1.8rem; /* Slightly smaller headings for mobile */
-  }
-
-  /* Add more padding for readability on mobile */
-  #about, #projects, #classes, #contact {
-    padding: 50px 15px; /* Increased padding on smaller screens */
+    object-fit: cover; /* Ensure video covers the screen */
+    transform: none; /* Remove unnecessary transform */
   }
 }
 
+/* Extra small screens (max-width: 480px) */
 @media (max-width: 480px) {
-  /* Further adjustments for small mobile devices */
   nav ul li a {
-    font-size: 1em; /* Smaller font for smaller mobile screens */
-  }
-
-  section {
-    padding: 15px 10px; /* Reduce padding on smaller screens */
+    font-size: 1em; /* Further reduce nav link size on small phones */
   }
 
   h1 {
-    font-size: 1.5rem; /* Further reduce heading size */
+    font-size: 1.5rem; /* Smaller heading for very small screens */
   }
 }
