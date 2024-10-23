@@ -39,14 +39,15 @@ nav ul li {
 nav ul li a {
   text-decoration: none; 
   font-weight: bold; 
-  transition: color 0.5s ease; 
+  transition: color 0.5s ease, font-size 0.5s ease; /* Add transition for font size */
   color: white; 
-  font-size: 1.5em;
+  font-size: 1.5em; /* Default font size */
   text-shadow: 1px 1px 1px #000000;   
 }
 
 nav ul li a.active {
   color: rgb(175, 0, 0); /* Active section color */
+  font-size: 1.8em; /* Increase font size when active */
 }
 
 #video-container {
@@ -91,7 +92,7 @@ section {
   background: linear-gradient(0deg, rgba(127,127,127,1) 0%, rgba(63,63,63,1) 100%);
 }
 
-#interests { /* Updated to "Interests" */
+#interests {
   background: rgb(191,191,191);
   background: linear-gradient(0deg, rgba(191,191,191,1) 0%, rgba(128,128,128,1) 100%);
 }
@@ -103,20 +104,17 @@ section {
 
 /* ----------- Responsive Styles for Mobile ----------- */
 @media (max-width: 768px) {
-  /* Remove video section for mobile */
   #video-container,
   #backgroundVideo {
     display: none; /* Hide video elements */
   }
 
-  /* Set sections to cover the viewport */
   section {
     height: 100vh; /* Ensure sections still take full height on mobile */
     padding: 60px 10px; /* Padding for readability */
     text-align: center; /* Center text on smaller screens */
   }
 
-  /* Navigation on mobile */
   nav ul {
     justify-content: space-around; /* Space links side by side */
     padding: 0; /* Remove padding */

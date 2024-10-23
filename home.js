@@ -1,19 +1,24 @@
-// Select the navbar and links
+// Select the navbar links and sections
 const links = document.querySelectorAll('nav ul li a');
 const sections = document.querySelectorAll('section');
 
 // Function to update navbar link color based on scroll position
 const changeNav = (entries, observer) => {
     entries.forEach((entry) => {
-        if(entry.isIntersecting && entry.intersectionRatio >= 0.85) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.85) {
             // Remove active class from all links
-            links.forEach(link => link.classList.remove('active'));
+            links.forEach(link => {
+                link.classList.remove('active');
+                link.style.fontSize = '1.5em'; // Reset font size
+            });
+
             // Get the id of the intersecting section
             const id = entry.target.getAttribute('id');
             // Add active class to the corresponding link
             const newLink = document.querySelector(`[href="#${id}"]`);
             if (newLink) {
                 newLink.classList.add('active');
+                newLink.style.fontSize = '1.8em'; // Increase font size of active link
             }
         }
     });
