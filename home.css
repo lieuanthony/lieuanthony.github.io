@@ -1,3 +1,4 @@
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,7 @@ body, html {
   scroll-behavior: smooth;
 }
 
+/* Navigation styling */
 nav {
   position: fixed; 
   top: 0; 
@@ -44,6 +46,7 @@ nav ul li a.active {
   color: rgb(175, 0, 0); /* Active section color */
 }
 
+/* Video container */
 #video-container {
   position: fixed; 
   top: 0;
@@ -65,6 +68,7 @@ nav ul li a.active {
   transform: translate(-50%, -50%); 
 }
 
+/* Section styles */
 section {
   width: 100vw; 
   height: 100vh; 
@@ -85,7 +89,7 @@ section {
   background: linear-gradient(0deg, rgba(127,127,127,1) 0%, rgba(63,63,63,1) 100%);
 }
 
-#classes {
+#interests {
   background: rgb(191,191,191);
   background: linear-gradient(0deg, rgba(191,191,191,1) 0%, rgba(128,128,128,1) 100%);
 }
@@ -93,4 +97,35 @@ section {
 #contact {
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 100%);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  nav ul li {
+    margin: 10px 0; /* Adjust margin for stacked items */
+  }
+
+  nav ul li a {
+    font-size: 1.2em; /* Reduce font size */
+  }
+
+  section {
+    height: auto; /* Allow sections to be dynamic in height */
+    padding: 50px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul li a {
+    font-size: 1em; /* Further reduce font size */
+  }
+
+  section {
+    height: auto;
+    padding: 40px 10px;
+  }
 }
