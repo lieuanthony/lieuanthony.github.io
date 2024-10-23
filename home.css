@@ -9,6 +9,7 @@ body, html {
   height: 100%;
   overflow-x: hidden; 
   scroll-behavior: smooth;
+  font-family: Cinzel;
 }
 
 body {
@@ -40,7 +41,6 @@ nav ul li a {
   font-weight: bold; 
   transition: color 0.5s ease; 
   color: white; 
-  font-family: Cinzel;
   font-size: 1.5em;
   text-shadow: 1px 1px 1px #000000;   
 }
