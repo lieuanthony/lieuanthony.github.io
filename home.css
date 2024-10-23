@@ -1,3 +1,4 @@
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,10 @@ body, html {
   height: 100%;
   overflow-x: hidden; 
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: black; /* Set a default black background */
 }
 
 nav {
@@ -62,12 +67,13 @@ nav ul li a.active {
   min-height: 100%; 
   width: auto;
   height: auto;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Ensure video covers the container */
 }
 
 section {
   width: 100vw; 
-  height: 100vh; 
+  height: 100vh; /* Make sections take up full screen height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +91,7 @@ section {
   background: linear-gradient(0deg, rgba(127,127,127,1) 0%, rgba(63,63,63,1) 100%);
 }
 
-#interests {
+#interests { /* Updated to "Interests" */
   background: rgb(191,191,191);
   background: linear-gradient(0deg, rgba(191,191,191,1) 0%, rgba(128,128,128,1) 100%);
 }
@@ -103,6 +109,13 @@ section {
     display: none; /* Hide video elements */
   }
 
+  /* Set sections to cover the viewport */
+  section {
+    height: 100vh; /* Ensure sections still take full height on mobile */
+    padding: 60px 10px; /* Padding for readability */
+    text-align: center; /* Center text on smaller screens */
+  }
+
   /* Navigation on mobile */
   nav ul {
     justify-content: space-around; /* Space links side by side */
@@ -115,13 +128,6 @@ section {
 
   nav ul li a {
     font-size: 1.2em; /* Adjust font size for mobile */
-  }
-
-  /* Sections */
-  section {
-    height: 100vh; /* Ensure sections still take full height on mobile */
-    padding: 60px 10px; /* Padding for readability */
-    text-align: center; /* Center text on smaller screens */
   }
 
   h1 {
