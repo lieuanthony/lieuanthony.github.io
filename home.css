@@ -95,19 +95,22 @@ section {
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 100%);
 }
 
-/* Existing styles remain unchanged */
-
 /* ----------- Responsive Styles for Mobile ----------- */
 @media (max-width: 768px) {
+  /* Remove video section for mobile */
+  #video-container,
+  #backgroundVideo {
+    display: none; /* Hide video elements */
+  }
+
   /* Navigation on mobile */
   nav ul {
-    flex-direction: column; /* Stack links vertically */
-    align-items: center; /* Center-align links */
-    padding: 0;
+    justify-content: space-around; /* Space links side by side */
+    padding: 0; /* Remove padding */
   }
 
   nav ul li {
-    margin: 10px 0; /* Add space between items */
+    margin: 0 5px; /* Adjust margin for spacing */
   }
 
   nav ul li a {
@@ -123,25 +126,6 @@ section {
 
   h1 {
     font-size: 2em; /* Resize section titles for smaller screens */
-  }
-
-  /* Hide the video on mobile devices and set background color */
-  #video-container {
-    display: none; /* Hide the video container */
-  }
-
-  /* New black background for mobile devices */
-  #about, #projects, #interests, #contact {
-    background-color: black; /* Set black background for sections */
-  }
-
-  /* Video container and scaling */
-  #video-container {
-    height: 100vh; /* Video container also full screen */
-  }
-
-  #backgroundVideo {
-    display: none; /* Hide the video element */
   }
 }
 
