@@ -95,65 +95,58 @@ section {
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 100%);
 }
 
-/* ----------- Mobile Responsiveness using Flexbox ----------- */
+/* ----------- Responsive Styles for Mobile ----------- */
 @media (max-width: 768px) {
 
-  /* Use flexbox to make sure things scale nicely on mobile */
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Flexbox nav adjustments */
+  /* Navigation on mobile */
   nav ul {
     flex-direction: column; /* Stack links vertically */
-    align-items: center; /* Center the links */
+    align-items: center; /* Center-align links */
+    padding: 0;
   }
 
   nav ul li {
-    margin: 10px 0; /* Add spacing between each nav item */
+    margin: 10px 0; /* Add space between items */
   }
 
   nav ul li a {
-    font-size: 1.2em; /* Adjust font size for smaller screens */
+    font-size: 1.2em; /* Adjust font size for mobile */
   }
 
-  /* Make sections responsive with flexbox */
+  /* Sections */
   section {
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center;
-    align-items: center;
-    height: auto; /* Allow section height to adjust based on content */
-    padding: 20px 10px; /* Add padding for better readability */
+    height: 100vh; /* Ensure sections still take full height on mobile */
+    padding: 60px 10px; /* Padding for readability */
+    text-align: center; /* Center text on smaller screens */
   }
 
   h1 {
-    font-size: 1.8rem; /* Adjust heading size for mobile */
+    font-size: 2em; /* Resize section titles for smaller screens */
   }
 
-  /* Ensure the video container and video scale properly on mobile */
+  /* Video container and scaling */
   #video-container {
-    width: 100vw;
-    height: auto;
+    height: 100vh; /* Video container also full screen */
   }
 
   #backgroundVideo {
-    width: 100vw;
-    height: auto; 
-    object-fit: cover; /* Ensure video covers the container */
-    transform: none; /* Remove unnecessary transform for mobile */
+    min-width: 100%; 
+    min-height: 100%;
+    width: 100%; 
+    height: auto;
+    object-fit: cover; /* Ensure the video covers the space */
+    transform: none; /* Remove the transform for mobile scaling */
   }
 }
 
-/* Extra small screens (max-width: 480px) */
+/* ----------- Extra small devices (max-width: 480px) ----------- */
 @media (max-width: 480px) {
+  
   nav ul li a {
-    font-size: 1em; /* Further reduce nav link size on small phones */
+    font-size: 1em; /* Further reduce nav link size for small phones */
   }
 
   h1 {
-    font-size: 1.5rem; /* Smaller heading for very small screens */
+    font-size: 1.5em; /* Smaller titles for very small screens */
   }
 }
