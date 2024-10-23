@@ -95,33 +95,45 @@ section {
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 100%);
 }
 
+/* ----------- Mobile Responsiveness using Flexbox ----------- */
 @media (max-width: 768px) {
 
-  /* Adjust navigation for mobile */
-  nav ul {
-    flex-direction: column; /* Stack nav links vertically on small screens */
+  /* Use flexbox to make sure things scale nicely on mobile */
+  body {
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
 
+  /* Flexbox nav adjustments */
+  nav ul {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center the links */
+  }
+
   nav ul li {
-    margin: 10px 0; /* Add space between items */
+    margin: 10px 0; /* Add spacing between each nav item */
   }
 
   nav ul li a {
-    font-size: 1.2em; /* Reduce font size for better fit */
+    font-size: 1.2em; /* Adjust font size for smaller screens */
   }
 
-  /* Adjust section height for mobile */
+  /* Make sections responsive with flexbox */
   section {
-    height: auto; /* Let content determine section height */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Allow section height to adjust based on content */
     padding: 20px 10px; /* Add padding for better readability */
   }
 
   h1 {
-    font-size: 1.8rem; /* Adjust heading sizes for mobile */
+    font-size: 1.8rem; /* Adjust heading size for mobile */
   }
 
-  /* Adjust video for mobile */
+  /* Ensure the video container and video scale properly on mobile */
   #video-container {
     width: 100vw;
     height: auto;
@@ -130,8 +142,8 @@ section {
   #backgroundVideo {
     width: 100vw;
     height: auto; 
-    object-fit: cover; /* Ensure video covers the screen */
-    transform: none; /* Remove unnecessary transform */
+    object-fit: cover; /* Ensure video covers the container */
+    transform: none; /* Remove unnecessary transform for mobile */
   }
 }
 
