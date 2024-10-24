@@ -205,16 +205,18 @@ header h4 {
   }
 
   nav ul {
-    justify-content: space-around; /* Space links side by side */
-    padding: 0; /* Remove padding */
+    justify-content: space-between; /* Space links evenly */
+    flex-wrap: wrap; /* Allow wrapping to next line if necessary */
   }
 
   nav ul li {
-    margin: 0 5px; /* Adjust margin for spacing */
+    flex: 1 1 20%; /* Allow links to grow and shrink, set a minimum width */
+    min-width: 100px; /* Minimum width for better fit */
   }
 
   nav ul li a {
-    font-size: 1.2em; /* Adjust font size for mobile */
+    font-size: 1.5em; /* Adjust font size for mobile */
+    padding: 0.5em; /* Add padding for better touch target */
   }
 
   h1 {
