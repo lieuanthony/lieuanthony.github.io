@@ -54,3 +54,21 @@ setTimeout(() => {
     intro.style.top = '-100vh'; // Move intro off-screen
     nav.classList.add('show');  // Show the navbar
 }, 2500); // 2.5 seconds total before hiding intro and showing navbar
+
+// GSAP animation for text effect
+gsap.registerPlugin(ScrollTrigger);
+
+const gsapTextElements = gsap.utils.toArray('#gsap-text-effect .gsap-text');
+
+gsapTextElements.forEach(text => {
+    gsap.to(text, {
+        backgroundSize: '100%',
+        ease: 'none',
+        scrollTrigger: {
+            trigger: text,
+            start: 'center 80%',
+            end: 'center 20%',
+            scrub: true,
+        },
+    });
+});
