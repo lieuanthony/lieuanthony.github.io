@@ -192,7 +192,6 @@ header h4 {
 }
 
 /* ----------- Responsive Styles for Mobile ----------- */
-/* ----------- Responsive Styles for Mobile ----------- */
 @media (max-width: 768px) {
   #video-container,
   #backgroundVideo {
@@ -205,25 +204,32 @@ header h4 {
     text-align: center; /* Center text on smaller screens */
   }
 
+  nav {
+    width: 100vw; /* Ensure the nav takes full width */
+  }
+
   nav ul {
     display: flex; /* Ensure links are in a row */
-    justify-content: space-around; /* Space links evenly */
+    justify-content: space-between; /* Space links evenly */
     padding: 0; /* Remove padding */
     flex-wrap: nowrap; /* Prevent wrapping to new line */
+    overflow: hidden; /* Prevent overflow */
   }
 
   nav ul li {
-    margin: 0 5px; /* Adjust margin for spacing */
+    margin: 0 2px; /* Adjust margin for spacing, reduce margin */
   }
 
   nav ul li a {
-    font-size: 1.2em; /* Adjust font size for mobile */
+    font-size: 1em; /* Adjust font size for mobile */
+    padding: 5px; /* Add some padding to links */
   }
 
   h1 {
     font-size: 2em; /* Resize section titles for smaller screens */
   }
 }
+
 
 /* ----------- Extra small devices (max-width: 480px) ----------- */
 @media (max-width: 480px) {
