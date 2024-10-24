@@ -20,6 +20,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'MatchaDalgona';
+  src: url('fonts/matcha-dalgona-font/MatchadalgonaRegular-3zxGp.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -30,133 +37,149 @@ body, html {
   height: 100%;
   overflow-x: hidden; 
   scroll-behavior: smooth;
-  font-family: SerifMatcha;
+  font-family: MatchaDalgona;
 }
 
 body {
-  background-color: white; /* Set a default black background */
+  background-color: white; /* Set a default white background */
 }
 
+/* Navbar styles */
 nav {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100vw; 
-  background-color: transparent; 
-  z-index: 10; 
-  padding: 1rem; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: transparent;
+  z-index: 10;
+  padding: 1rem;
 }
 
 nav ul {
-  opacity: 0; /* Initially hide the navbar links */
-  transition: opacity 0.5s ease; /* Smooth transition for showing the links */
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  visibility: hidden; /* Initially hidden */
+  transform: translateY(-100%); /* Move links off-screen (above the viewport) */
+  transition: transform 0.5s ease, visibility 0s 0.5s; /* Delay visibility change until after transform */
 }
 
 nav ul.show {
-  opacity: 1; /* Make the navbar visible */
-}
-
-nav ul {
-  list-style: none; 
-  display: flex; 
-  justify-content: center; 
+  visibility: visible;
+  transform: translateY(0); /* Slide links into place */
+  transition: none; /* Remove transition here, the timing will happen per link */
 }
 
 nav ul li {
-  margin: 0 15px; 
+  margin: 0 15px;
+  opacity: 0; /* Initially invisible */
+  transform: translateY(-100px); /* Start links off-screen */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+}
+
+nav ul.show li {
+  opacity: 1;
+  transform: translateY(0); /* Drop the links into place */
+}
+
+nav ul.show li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+nav ul.show li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+nav ul.show li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+nav ul.show li:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+nav ul.show li:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+nav ul.show li:nth-child(6) {
+  transition-delay: 0.6s;
 }
 
 nav ul li a {
-  text-decoration: none; 
-  font-weight: bold; 
-  transition: color 0.5s ease, font-size 0.5s ease; /* Add transition for font size */
-  color: white; 
-  font-size: 2em; /* Default font size */
-  text-shadow: 1px 1px 1px #000000;   
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.5s ease, font-size 0.5s ease;
+  color: white;
+  font-size: 2em;
+  text-shadow: 1px 1px 1px #000000;
 }
 
 nav ul li a.active {
   color: #26453E; /* Active section color */
-  font-size: 2.2em; /* Increase font size when active */
+  font-size: 2.2em;
 }
 
+/* Video container */
 #video-container {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh; 
+  height: 100vh;
   overflow: hidden;
-  z-index: -1; 
+  z-index: -1;
 }
 
 #backgroundVideo {
-  position: absolute; 
+  position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 100%; 
-  min-height: 100%; 
+  min-width: 100%;
+  min-height: 100%;
   width: auto;
   height: auto;
   transform: translate(-50%, -50%);
-  object-fit: cover; /* Ensure video covers the container */
+  object-fit: cover;
 }
 
+/* Section styles */
 section {
-  width: 100vw; 
-  height: 100vh; /* Make sections take up full screen height */
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black; 
-  position: relative; 
+  color: black;
+  position: relative;
 }
 
 #about {
-  background: rgb(139,168,136);
   background: linear-gradient(0deg, rgba(139,168,136,1) 0%, rgba(68,98,74,1) 100%);
 }
 
 #projects {
-  background: rgb(192,207,178);
   background: linear-gradient(0deg, rgba(192,207,178,1) 0%, rgba(139,168,136,1) 100%);
 }
 
 #interests {
-  background: rgb(241,235,225);
   background: linear-gradient(0deg, rgba(241,235,225,1) 0%, rgba(192,207,178,1) 100%);
 }
 
 #contact {
-  background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(241,235,225,1) 100%);
 }
 
 #extra {
-  background: rgb(255,183,197);
   background: linear-gradient(0deg, rgba(255,183,197,1) 0%, rgba(255,255,255,1) 100%);
-}
-
-header {
-  position: relative;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 80px;
-}
-
-header h4 {
-  position: absolute;
-  left: 10%;
-  bottom: 1rem;
 }
 
 /* Splash Screen */
 .intro {
   position: fixed;
   z-index: 1;
-  left: 0%;
-  top: 0%;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100vh;
   background-color: #44624a;
@@ -165,18 +188,22 @@ header h4 {
 
 .logo-header {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  text-shadow: 1px 1px 1px #000000;   
+  text-shadow: 1px 1px 1px #000000;
+  font-family: MatchaLemonade;
+  font-size: 7.5em;
 }
 
+/* Modify the fade-out effect for the logo spans */
 .logo {
   position: relative;
   display: inline-block;
-  bottom: -20px;
+  bottom: -50px;
   opacity: 0;
+  transition: ease-in-out 0.5s;
 }
 
 .logo.active {
@@ -185,9 +212,9 @@ header h4 {
   transition: ease-in-out 0.5s;
 }
 
-.logo.fade {
-  bottom: 0;
+.logo.fade-out {
   opacity: 0;
+  bottom: 50px; /* Move the text upward during fade-out */
   transition: ease-in-out 0.5s;
 }
 
@@ -211,32 +238,31 @@ header h4 {
   }
 
   nav ul {
-    display: flex; /* Ensure links are in a row */
-    justify-content: flex-start; /* Align items to the start */
-    padding: 0; /* Remove padding */
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
   }
 
   nav ul li {
-    margin: 0 5px; /* Adjust margin for spacing */
+    margin: 0 5px;
   }
 
   nav ul li a {
-    font-size: 1em; /* Adjust font size for mobile */
-    padding: 10px; /* Add some padding to links */
+    font-size: 1em;
+    padding: 10px;
   }
 
   h1 {
-    font-size: 2em; /* Resize section titles for smaller screens */
+    font-size: 2em;
   }
 }
 
-/* ----------- Extra small devices (max-width: 480px) ----------- */
 @media (max-width: 480px) {
   nav ul li a {
-    font-size: 1em; /* Further reduce nav link size for small phones */
+    font-size: 1em;
   }
 
   h1 {
-    font-size: 1.5em; /* Smaller titles for very small screens */
+    font-size: 1.5em;
   }
 }
