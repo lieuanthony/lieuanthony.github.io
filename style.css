@@ -192,6 +192,7 @@ header h4 {
 }
 
 /* ----------- Responsive Styles for Mobile ----------- */
+/* ----------- Responsive Styles for Mobile ----------- */
 @media (max-width: 768px) {
   #video-container,
   #backgroundVideo {
@@ -205,18 +206,18 @@ header h4 {
   }
 
   nav ul {
-    justify-content: space-between; /* Space links evenly */
-    flex-wrap: wrap; /* Allow wrapping to next line if necessary */
+    display: flex; /* Ensure links are in a row */
+    justify-content: space-around; /* Space links evenly */
+    padding: 0; /* Remove padding */
+    flex-wrap: nowrap; /* Prevent wrapping to new line */
   }
 
   nav ul li {
-    flex: 1 1 20%; /* Allow links to grow and shrink, set a minimum width */
-    min-width: 100px; /* Minimum width for better fit */
+    margin: 0 5px; /* Adjust margin for spacing */
   }
 
   nav ul li a {
-    font-size: 1.5em; /* Adjust font size for mobile */
-    padding: 0.5em; /* Add padding for better touch target */
+    font-size: 1.2em; /* Adjust font size for mobile */
   }
 
   h1 {
