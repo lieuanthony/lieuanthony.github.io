@@ -1,21 +1,7 @@
 /* Base styles */
 @font-face {
-  font-family: 'MatchaLemonade';
-  src: url('fonts/matcha-lemonade-font/Matchalemonadedemo-pgg01.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'SerifMatcha';
-  src: url('fonts/serif-matcha-font/matcha.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'MatchaDalgona';
-  src: url('fonts/matcha-dalgona-font/MatchadalgonaRegular-3zxGp.otf') format('opentype');
+  font-family: 'MatchaSerif';
+  src: url('fonts/matcha-serif-font/matcha.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -30,7 +16,7 @@ body, html {
   height: 100%;
   overflow-x: hidden; 
   scroll-behavior: smooth;
-  font-family: MatchaDalgona;
+  font-family: MatchaSerif;
 }
 
 body {
@@ -175,7 +161,7 @@ section {
   letter-spacing: -.01em;
   line-height: 100%;
   margin: 0;
-  font-family: SerifMatcha;
+  font-family: MatchaSerif;
   
   width: 100vw; /* Use the entire viewport width */
   color: rgba(50, 50, 50, 0.2);
@@ -221,15 +207,15 @@ section {
   color: inherit;
 }
 
-#interests {
+#skills {
   background: linear-gradient(0deg, rgba(241,235,225,1) 0%, rgba(192,207,178,1) 100%);
 }
 
-#contact {
+#interests {
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(241,235,225,1) 100%);
 }
 
-#extra {
+#contact {
   background: linear-gradient(0deg, rgba(255,183,197,1) 0%, rgba(255,255,255,1) 100%);
 }
 
@@ -252,8 +238,8 @@ section {
   transform: translate(-50%, -50%);
   color: white;
   text-shadow: 1px 1px 1px #000000;
-  font-family: MatchaLemonade;
-  font-size: 7.5em;
+  font-family: MatchaSerif;
+  font-size: 5em;
 }
 
 /* Modify the fade-out effect for the logo spans */
@@ -262,19 +248,19 @@ section {
   display: inline-block;
   bottom: -25vh;
   opacity: 0;
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.75s;
 }
 
 .logo.active {
   bottom: 0;
   opacity: 1;
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.75s;
 }
 
 .logo.fade-out {
   opacity: 0;
   bottom: 25vh; /* Move the text upward during fade-out */
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.75s;
 }
 
 /* ----------- Responsive Styles for Mobile ----------- */
