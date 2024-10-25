@@ -182,8 +182,7 @@ section {
   letter-spacing: -.01em;
   line-height: 100%;
   margin: 0;
-  font-family: MatchaLemonade;
-  padding-left: 15%;
+  font-family: SerifMatcha;
   
   width: 100vw; /* Use the entire viewport width */
   color: rgba(50, 50, 50, 0.2);

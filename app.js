@@ -58,17 +58,17 @@ setTimeout(() => {
 // GSAP animation for text effect
 gsap.registerPlugin(ScrollTrigger);
 
-const gsapTextElements = gsap.utils.toArray('#gsap-text-effect .gsap-text');
+const gsapTextElements = gsap.utils.toArray('.gsap-container .gsap-text'); // Select the correct elements
 
 gsapTextElements.forEach(text => {
     gsap.to(text, {
-        backgroundSize: '100%',
-        ease: 'none',
+        backgroundSize: '100%', // Animates the background size to 100% on scroll
+        ease: 'none', // No easing for smooth transition
         scrollTrigger: {
             trigger: text,
-            start: 'center 80%',
-            end: 'center 20%',
-            scrub: true,
+            start: 'top 80%', // Start animation when top of the element hits 80% of the viewport
+            end: 'bottom 20%', // End animation when bottom of the element hits 20% of the viewport
+            scrub: true, // Allows smooth scrubbing based on scroll position
         },
     });
 });
