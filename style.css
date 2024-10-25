@@ -284,7 +284,7 @@ section {
   }
 
   .gsap-text {
-    font-size: 15vw; /* Adjust for mobile */
+    font-size: 10vw; /* Adjust for mobile */
   }
 
   nav {
