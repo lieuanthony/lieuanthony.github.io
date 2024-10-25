@@ -276,6 +276,13 @@ section {
     text-align: center; /* Center text on smaller screens */
   }
 
+  #projects {
+    height: 100vh; /* Set projects section to take full viewport height on mobile */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+  }
+
   .gsap-text {
     font-size: 8vw; /* Adjust for mobile */
   }
