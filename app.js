@@ -72,3 +72,56 @@ gsapTextElements.forEach(text => {
         },
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+      ".about-left",
+      { x: "-100%", opacity: 0 },
+      {
+          x: "0%",
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+              trigger: ".about-left",
+              start: "top 80%",
+          },
+      }
+  );
+
+  gsap.fromTo(
+      ".about-right",
+      { x: "100%", opacity: 0 },
+      {
+          x: "0%",
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+              trigger: ".about-right",
+              start: "top 80%",
+          },
+      }
+  );
+});
+
+// Select the cursor element
+const cursor = document.querySelector('.cursor');
+
+// Update cursor position based on mouse movement
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = `${e.pageX}px`;
+  cursor.style.top = `${e.pageY}px`;
+});
+
+// Add hover effect to links
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('mouseenter', () => {
+    cursor.classList.add('cursor-grow');
+  });
+  link.addEventListener('mouseleave', () => {
+    cursor.classList.remove('cursor-grow');
+  });
+});
