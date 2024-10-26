@@ -162,6 +162,7 @@ section {
   line-height: 100%;
   margin: 0;
   font-family: MatchaSerif;
+  text-align: left;
   
   width: 100vw; /* Use the entire viewport width */
   color: rgba(50, 50, 50, 0.2);
