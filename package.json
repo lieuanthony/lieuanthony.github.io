@@ -1,7 +1,7 @@
 {
   "name": "lieuanthony.github.io",
   "version": "0.1.0",
-  "homepage": "https://lieuanthony.github.io",
+  "homepage": "https://lieuanthony.github.io/lieuanthony.github.io",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
