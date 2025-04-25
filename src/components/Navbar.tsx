@@ -2,40 +2,32 @@ import { useEffect, useState } from 'react';
 import './Navbar.css';
 
 function Navbar() {
-  const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isTransparent, setIsTransparent] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
-      }
-      
-      setLastScrollY(currentScrollY);
+      setIsTransparent(currentScrollY < 100);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
-    <nav className={`navbar ${isHidden ? 'hidden' : ''}`}>
-      <div className="navbar-container">
-        <div className="navbar-brand">
+    <header className={`navbar ${isTransparent ? 'transparent' : ''}`}>
+      <nav className="navbar-container">
+        <h1 className="navbar-brand">
           <a href="/">Anthony Lieu</a>
-        </div>
-        <div className="navbar-links">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-    </nav>
+        </h1>
+        <ul className="navbar-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 
