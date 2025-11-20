@@ -56,12 +56,6 @@ body {
   font-weight: 600;
 }
 
-.main-box:hover {
-  transition: background 0.3s ease, border-color 0.3s ease;
-  background: rgba(40, 40, 40, 0.8);
-  border-color: rgba(160, 160, 160, 0.6);
-}
-
 /* Right column container — match left box height */
 .right-column {
   width: 37.5%;
