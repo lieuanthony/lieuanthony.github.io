@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/lieuanthony.github.io/static/css/main.f855e6bc.css",
-    "main.js": "/lieuanthony.github.io/static/js/main.2dc59f88.js",
-    "static/js/453.d802b86c.chunk.js": "/lieuanthony.github.io/static/js/453.d802b86c.chunk.js",
-    "index.html": "/lieuanthony.github.io/index.html",
-    "main.f855e6bc.css.map": "/lieuanthony.github.io/static/css/main.f855e6bc.css.map",
-    "main.2dc59f88.js.map": "/lieuanthony.github.io/static/js/main.2dc59f88.js.map",
-    "453.d802b86c.chunk.js.map": "/lieuanthony.github.io/static/js/453.d802b86c.chunk.js.map"
+    "main.css": "/static/css/main.140a3951.css",
+    "main.js": "/static/js/main.c9cb04c2.js",
+    "static/js/453.d802b86c.chunk.js": "/static/js/453.d802b86c.chunk.js",
+    "static/media/JetBrainsMono-Bold.ttf": "/static/media/JetBrainsMono-Bold.06bb09be120e8b604064.ttf",
+    "static/media/JetBrainsMono-Regular.ttf": "/static/media/JetBrainsMono-Regular.93b40005892466035ab0.ttf",
+    "index.html": "/index.html",
+    "main.140a3951.css.map": "/static/css/main.140a3951.css.map",
+    "main.c9cb04c2.js.map": "/static/js/main.c9cb04c2.js.map",
+    "453.d802b86c.chunk.js.map": "/static/js/453.d802b86c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.2dc59f88.js"
+    "static/css/main.140a3951.css",
+    "static/js/main.c9cb04c2.js"
   ]
 }
