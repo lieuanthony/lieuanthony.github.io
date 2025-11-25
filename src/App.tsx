@@ -6,6 +6,7 @@ import "./App.css";
 gsap.registerPlugin(Draggable);
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
   const [boxes, setBoxes] = useState([
     { id: "main" },
     { id: "small1" },
@@ -15,8 +16,29 @@ export default function App() {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const positionsRef = useRef<{ [key: string]: DOMRect }>({});
-  const draggablesRef = useRef<{ [key: string]: Draggable[] }>({});
-  const skipAnimationRef = useRef<string | null>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      if (progressRef.current) {
+        gsap.to(progressRef.current, {
+          width: "100%",
+          duration: 1.2,
+          ease: "power2.out",
+          onComplete: () => {
+            gsap.to(".loading-screen", {
+              opacity: 0,
+              duration: 0.4,
+              ease: "power2.inOut",
+              onComplete: () => setLoading(false),
+            });
+          },
+        });
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   /** Record current positions (FLIP) */
   const recordPositions = () => {
@@ -346,23 +368,56 @@ export default function App() {
     createDraggables();
   }, [boxes]);
 
-  return (
-    <div ref={containerRef} className="app-container">
-      <div data-box-id={boxes[0].id} className="main-box">
-        {boxes[0].id}
-      </div>
+  React.useEffect(() => {
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
+  }, []);
 
-      <div className="right-column">
-        {boxes.slice(1).map((box) => (
-          <div
-            key={box.id}
-            data-box-id={box.id}
-            className="small-box"
-          >
-            {box.id}
+  return (
+    <>
+      {loading && (
+        <div className="loading-screen">
+          <div className="loading-bar">
+            <div ref={progressRef} className="loading-progress"></div>
           </div>
-        ))}
+        </div>
+      )}
+
+      <div ref={containerRef} className="app-container">
+        <div data-box-id={boxes[0].id} onClick={() => swap(0)} className="main-box">
+          {boxes[0].id}
+        </div>
+
+        <div className="right-column">
+          {boxes.slice(1).map((box, i) => (
+            <div
+              key={box.id}
+              data-box-id={box.id}
+              onClick={i === 2 ? undefined : () => swap(i + 1)}     // ❌ small3 not clickable
+              className="small-box"
+              style={{ cursor: i === 2 ? "default" : "pointer" }}   // ❌ small3 no pointer cursor
+            >
+              {i === 2 ? (
+                <iframe
+                  data-testid="embed-iframe"
+                  style={{ borderRadius: "12px", width: "100%", height: "100%" }}
+                  src="https://open.spotify.com/embed/playlist/4NDB13xo40yX307PgxGf5U?utm_source=generator"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              ) : (
+                box.id
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

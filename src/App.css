@@ -32,6 +32,37 @@ html, body {
   justify-content: center;
 }
 
+/* Loading screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-bar {
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loading-progress {
+  width: 0%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+}
+
+/* Main left box */
 .main-box {
   width: 60%;
   height: 95%;
@@ -79,4 +110,27 @@ html, body {
 
 .small-box:hover {
   background: rgba(40, 40, 40, 0.8);
+  border-color: rgba(160, 160, 160, 0.6);
+}
+
+/* ----------------------------------------- */
+/*   SPOTIFY BOX ALWAYS SOLID BACKGROUND     */
+/* ----------------------------------------- */
+
+/* Select the third small box (index 2) using nth-child */
+.right-column .small-box:nth-child(3) {
+  background: #121212 !important;       /* Solid Spotify embed color */
+  backdrop-filter: none !important;     /* Remove glass blur */
+  border: none !important;
+}
+
+/* Remove hover effects specifically for this one */
+.right-column .small-box:nth-child(3):hover {
+  background: #121212 !important;       /* Keep the same background */
+  border: none !important;
+}
+
+/* Remove hover pointer from the Spotify box (extra safety) */
+.right-column .small-box:nth-child(3) {
+  cursor: default !important;
 }
