@@ -64,48 +64,38 @@ html, body {
 
 /* Main left box */
 .main-box {
-  width: 60%;
-  height: 95%;
+  width: 59.5%;
+  height: 99.5%;
   background: rgba(30, 30, 30, 0.7);
   border: 1px solid rgba(128, 128, 128, 0.4);
-  border-radius: 16px;
+  border-radius: 10px;
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
   color: white;
-  cursor: grab;
-}
-
-.main-box:active {
-  cursor: grabbing;
 }
 
 .right-column {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 37.5%;
-  height: 95%;
+  gap: 1.5%;
+  width: 39.5%;
+  height: 99.5%;
 }
 
 .small-box {
   flex: 1;
   background: rgba(30, 30, 30, 0.7);
   border: 1px solid rgba(128, 128, 128, 0.4);
-  border-radius: 16px;
+  border-radius: 10px;
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #e0e0e0;
   font-size: 1.5rem;
-  cursor: grab;
-}
-
-.small-box:active {
-  cursor: grabbing;
 }
 
 .small-box:hover {
