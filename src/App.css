@@ -64,7 +64,7 @@ html, body {
 
 /* Main left box */
 .main-box {
-  width: 59.5%;
+  width: 59.25%;
   height: 99.5%;
   background: rgba(30, 30, 30, 0.7);
   border: 1px solid rgba(128, 128, 128, 0.4);
@@ -82,7 +82,7 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 1.5%;
-  width: 39.5%;
+  width: 39.25%;
   height: 99.5%;
 }
 
