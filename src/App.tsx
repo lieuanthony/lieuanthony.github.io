@@ -119,14 +119,13 @@ export default function App() {
             <div
               key={box.id}
               data-box-id={box.id}
-              onClick={i === 2 ? undefined : () => swap(i + 1)}     // ❌ small3 not clickable
+              onClick={i === 2 ? undefined : () => swap(i + 1)}
               className="small-box"
-              style={{ cursor: i === 2 ? "default" : "pointer" }}   // ❌ small3 no pointer cursor
             >
               {i === 2 ? (
                 <iframe
                   data-testid="embed-iframe"
-                  style={{ borderRadius: "12px", width: "100%", height: "100%" }}
+                  style={{ borderRadius: "10px", width: "100%", height: "100%" }}
                   src="https://open.spotify.com/embed/playlist/4NDB13xo40yX307PgxGf5U?utm_source=generator"
                   frameBorder="0"
                   allowFullScreen

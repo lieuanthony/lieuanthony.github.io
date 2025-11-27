@@ -110,14 +110,14 @@ html, body {
 
 /* Select the third small box (index 2) using nth-child */
 .right-column .small-box:nth-child(3) {
-  background: #121212 !important;       /* Solid Spotify embed color */
+  background: #525252 !important;       /* Solid Spotify embed color */
   backdrop-filter: none !important;     /* Remove glass blur */
   border: none !important;
 }
 
 /* Remove hover effects specifically for this one */
 .right-column .small-box:nth-child(3):hover {
-  background: #121212 !important;       /* Keep the same background */
+  background: #525252 !important;       /* Keep the same background */
   border: none !important;
 }
 
