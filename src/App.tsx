@@ -5,10 +5,10 @@ import "./App.css";
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [boxes, setBoxes] = useState([
-    { id: "main" },
-    { id: "small1" },
-    { id: "small2" },
-    { id: "small3" },
+    { id: "main", legend: "About Me" },
+    { id: "small1", legend: "Experience" },
+    { id: "small2", legend: "Projects & Skills" },
+    { id: "small3", legend: "Now Playing" },
   ]);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -110,36 +110,50 @@ export default function App() {
       )}
 
       <div ref={containerRef} className="app-container">
-        <div data-box-id={boxes[0].id} onClick={() => swap(0)} className="main-box">
-          {boxes[0].id}
+        <div
+          data-box-id={boxes[0].id}
+          onClick={() => swap(0)}
+          className="main-box"
+        >
+          <fieldset className="box-fieldset">
+            <legend className="box-legend">{boxes[0].legend}</legend>
+            <div className="box-content">{boxes[0].id}</div>
+          </fieldset>
         </div>
 
         <div className="right-column">
-          {boxes.slice(1).map((box, i) => (
-            <div
-              key={box.id}
-              data-box-id={box.id}
-              onClick={i === 2 ? undefined : () => swap(i + 1)}
-              className="small-box"
-            >
-              {i === 2 ? (
-                <div className="spotify-fieldset">
-                  <span className="spotify-legend">Now Playing</span>
-                  <iframe
-                    className="spotify-embed"
-                    data-testid="embed-iframe"
-                    src="https://open.spotify.com/embed/playlist/4NDB13xo40yX307PgxGf5U?utm_source=generator"
-                    frameBorder="0"
-                    allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                  />
-                </div>
-              ) : (
-                box.id
-              )}
-            </div>
-          ))}
+          {boxes.slice(1).map((box, i) => {
+            const isSpotify = i === 2;
+
+            return (
+              <div
+                key={box.id}
+                data-box-id={box.id}
+                onClick={isSpotify ? undefined : () => swap(i + 1)}
+                className="small-box"
+              >
+                {isSpotify ? (
+                  <fieldset className="spotify-fieldset">
+                    <legend className="spotify-legend">{box.legend}</legend>
+                    <iframe
+                      className="spotify-embed"
+                      data-testid="embed-iframe"
+                      src="https://open.spotify.com/embed/playlist/4NDB13xo40yX307PgxGf5U?utm_source=generator"
+                      frameBorder="0"
+                      allowFullScreen
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                      loading="lazy"
+                    />
+                  </fieldset>
+                ) : (
+                  <fieldset className="box-fieldset">
+                    <legend className="box-legend">{box.legend}</legend>
+                    <div className="box-content">{box.id}</div>
+                  </fieldset>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </>

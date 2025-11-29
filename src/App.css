@@ -102,6 +102,8 @@ html, body {
   justify-content: center;
   color: #e0e0e0;
   font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .small-box:hover {
@@ -118,6 +120,8 @@ html, body {
   background: #525252 !important;       /* Solid Spotify embed color */
   backdrop-filter: none !important;     /* Remove glass blur */
   border: none !important;
+  overflow: scroll;
+  cursor: default;
 }
 
 /* Remove hover effects specifically for this one */
@@ -126,17 +130,39 @@ html, body {
   border: none !important;
 }
 
-/* Remove hover pointer from the Spotify box (extra safety) */
-.right-column .small-box:nth-child(3) {
-  cursor: default !important;
+/* ----------------------------------------- */
+/*   FIELDSET STYLES FOR ALL BOXES           */
+/* ----------------------------------------- */
+
+/* Fieldset-style container for all boxes */
+.box-fieldset {
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 15px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
 }
 
-/* Push down the Spotify iframe */
-.spotify-embed {
-  border-radius: 10px;
+.box-legend {
+  padding: 0 8px;
+  font-size: 1rem;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.box-content {
   width: 100%;
   height: 100%;
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Fieldset-style container for Spotify */
@@ -151,12 +177,18 @@ html, body {
 }
 
 .spotify-legend {
-  position: absolute;
-  top: -10px;
-  left: 25px;
-  background: #525252;
   padding: 0 8px;
-  font-size: 0.75rem;
+  margin-left: 10px;
+  background: #525252;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
+}
+
+/* Push down the Spotify iframe */
+.spotify-embed {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  margin-top: 1.5%;
 }
