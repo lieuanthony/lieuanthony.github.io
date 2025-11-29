@@ -15,11 +15,25 @@ export default function App() {
   const positionsRef = useRef<{ [key: string]: DOMRect }>({});
   const progressRef = useRef<HTMLDivElement>(null);
 
-  const renderContent = (content: string) => {
+  const renderContent = (content: string, isLarge: boolean) => {
+    const catAscii = `⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣀⡀⡠⠔⠒⠐⠉⠙⣆⠀⠀⠀⡀⠀⠀
+⠀⠀⠀⠀⣮⠀⠀⠀⠀⠀⠀⠀⠀⠡⡀⠀⠐⠿⠃⠀
+⠀⣄⠀⠀⢸⠀⢀⡀⠀⠸⠀⠘⡃⠠⣳⣖⠀⢀⣦⣀
+⠈⠻⠉⠀⣿⣤⢘⠉⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠙⠀
+⢼⡦⠀⢊⢿⡋⠀⠀⠀⡴⢴⠒⠄⠀⠘⢄⢠⠛⡄⠀
+⠀⠁⠀⠀⠀⠉⢱⠂⠀⠀⠺⠂⠀⠀⠀⠀⢻⣰⠁⠀
+⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠘⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`;
+
     switch (content) {
       case "about":
+        // When large, show full content with banner
         return (
           <div className="tui-container">
+            <div className="ascii-art-banner">
+              <pre>{catAscii}</pre>
+            </div>
             <div className="tui-header">
               <span className="tui-prompt">user@portfolio:~$</span>
               <span className="tui-command">cat about.txt</span>
@@ -168,7 +182,7 @@ export default function App() {
         >
           <fieldset className="box-fieldset">
             <legend className="box-legend">{boxes[0].legend}</legend>
-            <div className="box-content">{renderContent(boxes[0].content)}</div>
+            <div className="box-content">{renderContent(boxes[0].content, true)}</div>
           </fieldset>
         </div>
 
@@ -199,7 +213,7 @@ export default function App() {
                 ) : (
                   <fieldset className="box-fieldset">
                     <legend className="box-legend">{box.legend}</legend>
-                    <div className="box-content">{renderContent(box.content)}</div>
+                    <div className="box-content">{renderContent(box.content, false)}</div>
                   </fieldset>
                 )}
               </div>
