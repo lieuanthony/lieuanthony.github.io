@@ -5,15 +5,66 @@ import "./App.css";
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [boxes, setBoxes] = useState([
-    { id: "main", legend: "About Me" },
-    { id: "small1", legend: "Experience" },
-    { id: "small2", legend: "Projects & Skills" },
-    { id: "small3", legend: "Now Playing" },
+    { id: "main", legend: "About Me", content: "about" },
+    { id: "small1", legend: "Experience", content: "experience" },
+    { id: "small2", legend: "Projects & Skills", content: "projects" },
+    { id: "small3", legend: "Now Playing", content: "spotify" },
   ]);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const positionsRef = useRef<{ [key: string]: DOMRect }>({});
   const progressRef = useRef<HTMLDivElement>(null);
+
+  const renderContent = (content: string) => {
+    switch (content) {
+      case "about":
+        return (
+          <div className="tui-container">
+            <div className="tui-header">
+              <span className="tui-prompt">user@portfolio:~$</span>
+              <span className="tui-command">cat about.txt</span>
+            </div>
+            <div className="tui-content">
+              <p className="tui-line">
+                <span className="tui-label">NAME:</span> Your Name
+              </p>
+              <p className="tui-line">
+                <span className="tui-label">ROLE:</span> Software Engineer | Full Stack Developer
+              </p>
+              <p className="tui-line">
+                <span className="tui-label">LOCATION:</span> San Francisco, CA
+              </p>
+              <p className="tui-line tui-spacing"></p>
+              <p className="tui-line">
+                <span className="tui-label">BIO:</span>
+              </p>
+              <p className="tui-line tui-text">
+                Passionate software engineer with expertise in building
+              </p>
+              <p className="tui-line tui-text">
+                modern web applications. I love creating elegant solutions
+              </p>
+              <p className="tui-line tui-text">
+                to complex problems and learning new technologies.
+              </p>
+              <p className="tui-line tui-spacing"></p>
+              <p className="tui-line">
+                <span className="tui-label">INTERESTS:</span> AI/ML, Web3, Open Source
+              </p>
+              <p className="tui-line">
+                <span className="tui-label">EMAIL:</span> your.email@example.com
+              </p>
+            </div>
+          </div>
+        );
+      case "experience":
+        return <div className="placeholder-text">Experience Content</div>;
+      case "projects":
+        return <div className="placeholder-text">Projects & Skills Content</div>;
+      default:
+        return null;
+    }
+  };
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
@@ -117,7 +168,7 @@ export default function App() {
         >
           <fieldset className="box-fieldset">
             <legend className="box-legend">{boxes[0].legend}</legend>
-            <div className="box-content">{boxes[0].id}</div>
+            <div className="box-content">{renderContent(boxes[0].content)}</div>
           </fieldset>
         </div>
 
@@ -148,7 +199,7 @@ export default function App() {
                 ) : (
                   <fieldset className="box-fieldset">
                     <legend className="box-legend">{box.legend}</legend>
-                    <div className="box-content">{box.id}</div>
+                    <div className="box-content">{renderContent(box.content)}</div>
                   </fieldset>
                 )}
               </div>
