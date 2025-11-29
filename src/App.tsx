@@ -123,15 +123,18 @@ export default function App() {
               className="small-box"
             >
               {i === 2 ? (
-                <iframe
-                  data-testid="embed-iframe"
-                  style={{ borderRadius: "10px", width: "100%", height: "100%" }}
-                  src="https://open.spotify.com/embed/playlist/4NDB13xo40yX307PgxGf5U?utm_source=generator"
-                  frameBorder="0"
-                  allowFullScreen
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                />
+                <div className="spotify-fieldset">
+                  <span className="spotify-legend">Now Playing</span>
+                  <iframe
+                    className="spotify-embed"
+                    data-testid="embed-iframe"
+                    src="https://open.spotify.com/embed/playlist/4NDB13xo40yX307PgxGf5U?utm_source=generator"
+                    frameBorder="0"
+                    allowFullScreen
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  />
+                </div>
               ) : (
                 box.id
               )}
