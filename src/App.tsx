@@ -190,6 +190,7 @@ export default function App() {
                   <fieldset className="spotify-fieldset">
                     <legend className="spotify-legend">{box.legend}</legend>
                     <iframe
+                      title="spotify"
                       className="spotify-embed"
                       data-testid="embed-iframe"
                       src="https://open.spotify.com/embed/playlist/4NDB13xo40yX307PgxGf5U?utm_source=generator"
