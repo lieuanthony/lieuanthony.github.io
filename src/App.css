@@ -71,7 +71,7 @@ html, body {
 .main-box {
   width: 59.25%;
   height: 99.5%;
-  background: rgba(30, 30, 30, 0.7);
+  background: rgba(30, 30, 30, 0.8);
   border: 1px solid rgba(128, 128, 128, 0.4);
   border-radius: 10px;
   backdrop-filter: blur(10px);
@@ -94,7 +94,7 @@ html, body {
 
 .small-box {
   flex: 1;
-  background: rgba(30, 30, 30, 0.7);
+  background: rgba(30, 30, 30, 0.8);
   border: 1px solid rgba(128, 128, 128, 0.4);
   border-radius: 10px;
   backdrop-filter: blur(10px);
@@ -171,6 +171,8 @@ html, body {
   overflow-y: auto;
   overflow-x: hidden;
   min-height: 0;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 /* Fieldset-style container for Spotify */
@@ -262,7 +264,10 @@ html, body {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.placeholder-text {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.7);
+.pipe {
+  font-size: 1rem;       /* reset size */
+  line-height: 1;        /* fixes tall pipes */
+  margin: 0 6px;         /* spacing */
+  opacity: 0.8;          /* optional: match link vibe */
+  font-weight: 400;      /* ensures thin normal pipe */
 }

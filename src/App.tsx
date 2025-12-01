@@ -5,9 +5,9 @@ import "./App.css";
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [boxes, setBoxes] = useState([
-    { id: "main", legend: "About Me", content: "about" },
+    { id: "main", legend: "About", content: "about" },
     { id: "small1", legend: "Experience", content: "experience" },
-    { id: "small2", legend: "Projects & Skills", content: "projects" },
+    { id: "small2", legend: "Projects", content: "projects" },
     { id: "small3", legend: "Now Playing", content: "spotify" },
   ]);
 
@@ -28,45 +28,34 @@ export default function App() {
 
     switch (content) {
       case "about":
-        // When large, show full content with banner
         return (
           <div className="tui-container">
             <div className="ascii-art-banner">
               <pre>{catAscii}</pre>
             </div>
             <div className="tui-header">
-              <span className="tui-prompt">user@portfolio:~$</span>
+              <span className="tui-prompt">-{'>'} ~</span>
               <span className="tui-command">cat about.txt</span>
             </div>
             <div className="tui-content">
               <p className="tui-line">
-                <span className="tui-label">NAME:</span> Your Name
-              </p>
-              <p className="tui-line">
-                <span className="tui-label">ROLE:</span> Software Engineer | Full Stack Developer
-              </p>
-              <p className="tui-line">
-                <span className="tui-label">LOCATION:</span> San Francisco, CA
-              </p>
-              <p className="tui-line tui-spacing"></p>
-              <p className="tui-line">
                 <span className="tui-label">BIO:</span>
               </p>
               <p className="tui-line tui-text">
-                Passionate software engineer with expertise in building
-              </p>
-              <p className="tui-line tui-text">
-                modern web applications. I love creating elegant solutions
-              </p>
-              <p className="tui-line tui-text">
-                to complex problems and learning new technologies.
-              </p>
-              <p className="tui-line tui-spacing"></p>
-              <p className="tui-line">
-                <span className="tui-label">INTERESTS:</span> AI/ML, Web3, Open Source
+                Hi! My name is Anthony Lieu, and I am a third-year student studying Software Engineering at RIT.
+                I enjoy all things problem-solving from coding, to playing video games, and to bouldering.
+                I am currently looking for an internship related to Fullstack Engineering in the Summer/Fall of 2026.
               </p>
               <p className="tui-line">
-                <span className="tui-label">EMAIL:</span> your.email@example.com
+                <p className="tui-spacing"></p>
+                <span className="tui-label">LINKS:</span>
+              </p>
+              <p className="tui-line">
+                <a className="tui-text" href="/assets/Lieu_Anthony_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                <span className="pipe">|</span>
+                <a className="tui-text" href="https://www.linkedin.com/in/lieuanthony/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <span className="pipe">|</span>
+                <a className="tui-text" href="https://github.com/lieuanthony" target="_blank" rel="noopener noreferrer">GitHub</a>
               </p>
             </div>
           </div>
