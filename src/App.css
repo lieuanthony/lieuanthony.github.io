@@ -267,7 +267,5 @@ html, body {
 .pipe {
   font-size: 1rem;       /* reset size */
   line-height: 1;        /* fixes tall pipes */
-  margin: 0 6px;         /* spacing */
-  opacity: 0.8;          /* optional: match link vibe */
-  font-weight: 400;      /* ensures thin normal pipe */
+  margin-left: 20px;         /* spacing */
 }
