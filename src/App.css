@@ -1,30 +1,144 @@
 @font-face {
-  font-family: 'JetBrains Mono';
-  src: url("../public/fonts/JetBrainsMono-Regular.ttf") format("truetype");
+  font-family: "Copperplate Gothic";
+  src: url("../public/fonts/Copperplate_Gothic_Bold_Regular.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("../public/fonts/JetBrainsMono-Bold.ttf") format("truetype");
-  font-weight: bold;
+html, body {
+  font-family: "Copperplate Gothic";
+  color: #4B4B4B;
+
 }
 
-html {
-  background-color: #F2F0EF;
-}
-
-#dd {
-  width: auto;
-  height: auto;
-  justify-content: center;
+/* Card.css */
+.card-container {
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  border: 1px solid red;
-  margin-top: 20%;
-  margin-right: 40%;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  background-color: #EBE9E5;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-#intro {
-  font-family: "JetBrains Mono";
-  font-weight: bold;
-  font-size: 3em;
+.business-card {
+  position: relative;
+  width: 100%;
+  max-width: 52rem;
+  aspect-ratio: 3.5 / 2;
+  background-color: #FAF9F6;
+  border: 1px solid #DDD9D0;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
+
+.card-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.card-content {
+  position: relative;
+  height: 100%;
+  padding: 3rem;
+}
+
+.phone-number {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+}
+
+.phone-number p {
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.company-info {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  text-align: right;
+}
+
+.company-name {
+  font-size: 1.15rem;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  margin-top: 0;
+}
+
+.company-department {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.person-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.person-name {
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  margin-top: 0;
+}
+
+.person-title {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.contact-info {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.location {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+.social-links a {
+  color: #4B4B4B;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.social-links a:hover {
+  opacity: 0.7;
+}
+
