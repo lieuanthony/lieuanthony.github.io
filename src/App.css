@@ -28,8 +28,8 @@ body {
   display: none;
 }
 
-body::selection {
-  background-color: yellow;
+mark, body::selection {
+  background-color: rgba(0, 0, 128, 0.25);
 }
 
 #container {
@@ -106,9 +106,10 @@ body::selection {
 }
 
 #foot {
-  height: 10vh;
+  height: 8vh;
   width: 100%;
-  background-color: beige;
+  background-color: black;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,4 +133,8 @@ body::selection {
   outline: 1px solid red;
   height: 25vh;
   width: calc(50% - 10px); /* 50% minus half the gap (20px / 2) */
+}
+
+#hirono {
+  max-height: 25vh;
 }

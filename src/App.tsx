@@ -22,21 +22,23 @@ export default function App() {
     <div id="app">
       <div id="container">
         <div id="intro">
+          <img id="hirono" src="/assets/images/me.png" alt="hirono"></img>
           <p id="title">Hi, I'm Anthony Lieu!</p>
           <p id="description">
             I'm a 3rd-year student studying <mark>Software Engineering</mark> at RIT.
             I enjoy all things problem-solving, from coding to playing video games and bouldering.
+            I’m especially interested in building web applications using <mark>cloud technologies</mark> to create scalable and reliable systems.
             I'm currently looking for an internship related to <mark>backend development</mark> in the <mark>Summer/Fall of 2026</mark>.
           </p>
           <div id="links">
             <a className="icon-button" href="https://www.linkedin.com/in/lieuanthony/" target="_blank" rel="noopener noreferrer">
-              <img className="icon" src="/assets/icons/linkedin.svg"></img>
+              <img className="icon" src="/assets/icons/linkedin.svg" alt="linkedin"></img>
             </a>
             <a className="icon-button" href="https://github.com/lieuanthony" target="_blank" rel="noopener noreferrer">
-              <img className="icon" src="/assets/icons/github.svg"></img>
+              <img className="icon" src="/assets/icons/github.svg" alt="github"></img>
             </a>
             <a className="icon-button" href="/assets/Lieu_Anthony_Resume.pdf" target="_blank" rel="noopener noreferrer">
-              <img className="icon" src="/assets/icons/document.svg"></img>
+              <img className="icon" src="/assets/icons/document.svg" alt="document"></img>
             </a>
           </div>
         </div>
