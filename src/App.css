@@ -14,9 +14,29 @@
   font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "JetBrains Mono";
   margin: 0;
+  color: black;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body::selection {
+  background-color: yellow;
+}
+
+#container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #intro {
@@ -24,7 +44,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0px;
+  gap: 10px;
 }
 
 #title,
@@ -33,12 +53,83 @@ body {
 }
 
 #title {
-  outline: 1px solid red;
   font-weight: bold;
   display: inline-block;
 }
 
 #description {
-  outline: 1px solid red;
   display: inline-block;
+  max-width: 50%;
+}
+
+#cont {
+  height: 100vh;
+}
+
+.icon {
+  max-height: 25px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#links {
+  display: flex;
+  gap: 10px;
+  max-width: 50%;
+}
+
+#scroll-arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#scroll-arrow.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.arrow-icon {
+  width: 30px;
+  height: 30px;
+  stroke: black;
+  stroke-width: 2;
+  fill: none;
+}
+
+#foot {
+  height: 10vh;
+  width: 100%;
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cont {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 50%;
+  gap: 20px;
+}
+
+.card {
+  outline: 1px solid red;
+  height: 25vh;
+  width: calc(50% - 10px); /* 50% minus half the gap (20px / 2) */
 }
