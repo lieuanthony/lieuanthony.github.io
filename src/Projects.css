@@ -65,3 +65,63 @@ color: black;
 .project-link:hover {
 text-decoration: underline;
 }
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    width: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  #projects {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    margin-bottom: 30px;
+  }
+
+  .projects-grid {
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #projects {
+    padding: 40px 15px;
+  }
+
+  .section-title {
+    margin-bottom: 24px;
+  }
+
+  .projects-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    padding: 18px;
+    gap: 10px;
+  }
+
+  .project-description {
+    font-size: 0.875rem;
+  }
+
+  .tech-stack {
+    gap: 6px;
+  }
+
+  .tech-pill {
+    font-size: 0.7rem;
+    padding: 3px 7px;
+  }
+}

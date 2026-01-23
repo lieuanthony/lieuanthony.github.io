@@ -88,3 +88,61 @@
   stroke-width: 2;
   fill: none;
 }
+
+@media (max-width: 768px) {
+  #about {
+    padding: 15px;
+  }
+
+  #hirono-img {
+    max-height: 20vh;
+  }
+
+  #bio {
+    max-width: 90%;
+  }
+
+  #links {
+    max-width: 90%;
+    gap: 8px;
+  }
+
+  .icon-link {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  #scroll-arrow {
+    bottom: 20px;
+  }
+
+  .arrow-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  #about {
+    padding: 10px;
+  }
+
+  #intro {
+    gap: 8px;
+  }
+
+  #hirono-img {
+    max-height: 18vh;
+  }
+
+  #bio,
+  #links {
+    max-width: 95%;
+  }
+}
