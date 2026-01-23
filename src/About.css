@@ -1,8 +1,12 @@
-#container {
+#about {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#hirono-img {
+  max-height: 25vh;
 }
 
 #intro {
@@ -13,34 +17,48 @@
   gap: 10px;
 }
 
-#title,
-#description {
+#name,
+#bio {
   margin: 0;
 }
 
-#title {
+#name {
   font-weight: bold;
   display: inline-block;
 }
 
-#description {
+#bio {
   display: inline-block;
   max-width: 50%;
 }
 
-#cont {
-  height: 100vh;
+.icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+
+  background: none;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .icon {
-  max-height: 25px;
+  width: 22px;
+  height: 22px;
 }
 
-.icon-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
 
 #links {
   display: flex;
@@ -69,8 +87,4 @@
   stroke: black;
   stroke-width: 2;
   fill: none;
-}
-
-#hirono {
-  max-height: 25vh;
 }

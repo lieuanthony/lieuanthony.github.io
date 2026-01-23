@@ -8,7 +8,7 @@ export default function App() {
     <div id="app">
       <About />
       <Projects />
-      <footer id="foot">
+      <footer id="page-footer">
         <p>Portfolio made by Anthony Lieu</p>
       </footer>
     </div>

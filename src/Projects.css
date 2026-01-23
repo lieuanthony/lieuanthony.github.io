@@ -1,19 +1,67 @@
-#cont {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-#card-container {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 50%;
-  gap: 20px;
+#projects {
+min-height: 100vh;
+padding: 80px 0;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
-.card {
-  outline: 1px solid red;
-  height: 25vh;
-  width: calc(50% - 10px); /* 50% minus half the gap (20px / 2) */
+.section-title {
+font-size: 2rem;
+margin-bottom: 40px;
+}
+
+.projects-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 24px;
+width: 60%;
+}
+
+.project-card {
+border: 1px solid rgba(0, 0, 0, 0.15);
+border-radius: 12px;
+padding: 24px;
+display: flex;
+flex-direction: column;
+gap: 12px;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-description {
+font-size: 0.9rem;
+}
+
+
+
+.tech-stack {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+
+.tech-pill {
+font-size: 0.75rem;
+padding: 4px 8px;
+border-radius: 999px;
+background-color: rgba(0, 0, 128, 0.15);
+}
+
+
+.project-link {
+margin-top: auto;
+text-decoration: none;
+font-weight: bold;
+color: black;
+}
+
+
+.project-link:hover {
+text-decoration: underline;
 }

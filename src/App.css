@@ -32,8 +32,8 @@ mark, body::selection {
   background-color: rgba(0, 0, 128, 0.25);
 }
 
-#foot {
-  height: 8vh;
+#page-footer {
+  height: auto;
   width: 100%;
   background-color: black;
   color: white;
