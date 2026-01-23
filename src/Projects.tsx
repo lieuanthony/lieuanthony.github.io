@@ -2,31 +2,31 @@ import "./Projects.css"
 
 export default function Projects() {
     const projects = [
-{
-title: "Game Lobby Service",
-description: "Backend service for creating temporary game lobbies with unique codes, Redis-backed and race-condition safe.",
-tech: ["Node.js", "Redis", "PostgreSQL"],
-link: "https://github.com/lieuanthony"
-},
-{
-title: "Senior Project Portal",
-description: "Web portal for managing senior projects, roles, and submissions for the SE department.",
-tech: ["React", "Express", "PostgreSQL"],
-link: "#"
-},
-{
-title: "Portfolio Website",
-description: "Personal portfolio showcasing projects, resume, and contact links.",
-tech: ["React", "CSS"],
-link: "#"
-},
-{
-title: "Voice-to-Text Web App",
-description: "Web app that captures audio and transcribes speech using cloud services.",
-tech: ["AWS Transcribe", "React"],
-link: "#"
-}
-];
+        {
+            title: "Say Less",
+            description: "Real-time multiplayer voice game with WebSocket server managing synchronized lobbies, live audio streaming, and server-authoritative game state validation.",
+            tech: ["Python", "React", "Redis", "PostgreSQL", "AWS"],
+            link: "https://github.com/lieuanthony"
+        },
+        {
+            title: "Stock Market News Analyzer",
+            description: "Serverless application for real-time news sentiment analysis using AWS Comprehend, with automated workflow pipeline for infrastructure provisioning.",
+            tech: ["Python", "React", "MySQL", "AWS"],
+            link: "https://github.com/lieuanthony"
+        },
+        {
+            title: "NutriKit",
+            description: "Food management application for tracking nutritional information with React frontend and Flask REST API backend, using PostgreSQL for data persistence.",
+            tech: ["React", "Flask", "PostgreSQL"],
+            link: "https://github.com/lieuanthony"
+        },
+        {
+            title: "U-Fund",
+            description: "Full-stack charity platform with donation and volunteer management workflows, featuring secure authentication and RESTful API integration.",
+            tech: ["Java", "Angular", "Spring Boot"],
+            link: "https://github.com/lieuanthony"
+        }
+    ];
 
     return (
         <section id="projects">
