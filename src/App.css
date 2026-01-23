@@ -32,79 +32,6 @@ mark, body::selection {
   background-color: rgba(0, 0, 128, 0.25);
 }
 
-#container {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-#title,
-#description {
-  margin: 0;
-}
-
-#title {
-  font-weight: bold;
-  display: inline-block;
-}
-
-#description {
-  display: inline-block;
-  max-width: 50%;
-}
-
-#cont {
-  height: 100vh;
-}
-
-.icon {
-  max-height: 25px;
-}
-
-.icon-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-#links {
-  display: flex;
-  gap: 10px;
-  max-width: 50%;
-}
-
-#scroll-arrow {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-#scroll-arrow.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-.arrow-icon {
-  width: 30px;
-  height: 30px;
-  stroke: black;
-  stroke-width: 2;
-  fill: none;
-}
-
 #foot {
   height: 8vh;
   width: 100%;
@@ -113,8 +40,4 @@ mark, body::selection {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#hirono {
-  max-height: 25vh;
 }
