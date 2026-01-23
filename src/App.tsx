@@ -22,7 +22,7 @@ export default function App() {
     <div id="app">
       <div id="container">
         <div id="intro">
-          <img id="hirono" src="/assets/images/me.png" alt="hirono"></img>
+          <img id="hirono" src="/assets/images/hirono.png" alt="hirono"></img>
           <p id="title">Hi, I'm Anthony Lieu!</p>
           <p id="description">
             I'm a 3rd-year student studying <mark>Software Engineering</mark> at RIT.
