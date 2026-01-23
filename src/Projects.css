@@ -1,0 +1,19 @@
+#cont {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 50%;
+  gap: 20px;
+}
+
+.card {
+  outline: 1px solid red;
+  height: 25vh;
+  width: calc(50% - 10px); /* 50% minus half the gap (20px / 2) */
+}

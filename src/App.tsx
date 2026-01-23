@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Projects from "./Projects"
 import "./App.css";
 
 export default function App() {
@@ -48,22 +49,7 @@ export default function App() {
           </svg>
         </div>
       </div>
-      <div id="cont">
-        <div id="card-container">
-          <div className="card">
-            sdf
-          </div>
-          <div className="card">
-            sdf
-          </div>
-          <div className="card">
-            sdf
-          </div>
-          <div className="card">
-            sdf
-          </div>
-        </div>
-      </div>
+      <Projects />
       <footer id="foot">
         <p>Portfolio made by Anthony Lieu</p>
       </footer>
