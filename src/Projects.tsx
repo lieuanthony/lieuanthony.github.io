@@ -10,7 +10,7 @@ export default function Projects() {
         },
         {
             title: "Stock Market News Analyzer",
-            description: "Serverless application for real-time news sentiment analysis using AWS Comprehend, with automated workflow pipeline for infrastructure provisioning.",
+            description: "Cloud-based application for real-time news sentiment analysis using AWS Comprehend, with automated workflow pipeline for infrastructure provisioning.",
             tech: ["Python", "React", "MySQL", "AWS"],
             link: null
         },
