@@ -36,7 +36,7 @@ export default function App() {
             <a className="icon-link" href="https://github.com/lieuanthony" target="_blank" rel="noopener noreferrer">
               <img className="icon" src="/assets/icons/github.svg" alt="GitHub"></img>
             </a>
-            <a className="icon-link" href="/assets/Lieu_Anthony_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a className="icon-link" href="/assets/Lieu_Anthony_Resume_Current.pdf" target="_blank" rel="noopener noreferrer">
               <img className="icon" src="/assets/icons/document.svg" alt="Resume"></img>
             </a>
           </div>
