@@ -13,19 +13,18 @@
     width: 60%;
 }
 
-.back-button {
+/* Back link */
+.back-link {
     align-self: flex-start;
-    background: none;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 8px 16px;
     font-size: 0.9rem;
-    cursor: pointer;
-    transition: background 0.2s ease;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
 }
 
-.back-button:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+.back-link:hover {
+    border-color: rgba(0, 0, 0, 0.5);
 }
 
 .detail-title {
@@ -33,7 +32,7 @@
     margin: 0;
 }
 
-.detail-description {
+.detail-section p {
     font-size: 0.95rem;
     line-height: 1.7;
     max-width: 720px;
@@ -42,7 +41,24 @@
 .detail-media {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
+}
+
+.media-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.media-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.media-label {
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .media-item {
@@ -78,6 +94,7 @@
     background-color: rgba(0, 0, 128, 0.15);
 }
 
+/* Links section */
 .detail-links {
     display: flex;
     gap: 16px;
@@ -96,6 +113,24 @@
 
 .detail-link:hover {
     background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Smaller GitHub button */
+.github-link {
+    padding: 7px 14px;
+    font-size: 0.85rem;
+}
+
+.detail-list {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail-list li {
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 @media (max-width: 1024px) {
