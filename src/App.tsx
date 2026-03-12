@@ -1,16 +1,33 @@
-import About from "./About"
-import Projects from "./Projects"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "./About";
+import Projects from "./Projects";
+import Experience from "./Experience";
+import ProjectDetail from "./ProjectDetail";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 import "./App.css";
 
-export default function App() {
+function Main() {
+    return (
+        <>
+            <Navbar />
+            <div id="app">
+                <About />
+                <Experience />
+                <Projects />
+            </div>
+            <Footer />
+        </>
+    );
+}
 
-  return (
-    <div id="app">
-      <About />
-      <Projects />
-      <footer id="page-footer">
-        <p>Portfolio made by Anthony Lieu</p>
-      </footer>
-    </div>
-  );
+export default function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="/projects/:id" element={<ProjectDetail />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }

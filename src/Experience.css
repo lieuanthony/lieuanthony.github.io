@@ -1,0 +1,112 @@
+#experience {
+    padding: 80px 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+#experience-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.experience-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.experience-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: "JetBrains Mono", monospace;
+    gap: 16px;
+}
+
+.experience-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.experience-role {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+}
+
+.experience-meta {
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.experience-chevron {
+    flex-shrink: 0;
+    color: black;
+    transition: transform 0.25s ease;
+}
+
+.experience-chevron svg {
+    stroke: black;
+    stroke-width: 2;
+    fill: none;
+    display: block;
+}
+
+.experience-chevron.open {
+    transform: rotate(180deg);
+}
+
+.experience-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s ease;
+}
+
+.experience-body.open {
+    grid-template-rows: 1fr;
+}
+
+.experience-bullets {
+    overflow: hidden;
+    margin: 0;
+    padding: 0 0 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.experience-bullets li {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 768px) {
+    #experience {
+        padding: 60px 24px;
+    }
+
+    .experience-role {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #experience {
+        padding: 40px 16px;
+    }
+
+    .experience-role {
+        font-size: 0.85rem;
+    }
+
+    .experience-meta {
+        font-size: 0.75rem;
+    }
+}

@@ -1,148 +1,82 @@
 #about {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 48px;
+}
+
+#about-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+    max-width: 860px;
+    width: 100%;
+}
+
+#about-left {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #hirono-img {
-  max-height: 25vh;
+    max-height: 280px;
 }
 
-#intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-#name,
-#bio {
-  margin: 0;
+#about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 #name {
-  font-weight: bold;
-  display: inline-block;
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 #bio {
-  display: inline-block;
-  max-width: 50%;
-}
-
-.icon-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 44px;
-  height: 44px;
-
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-
-  background: none;
-  cursor: pointer;
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.icon-link:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.icon {
-  width: 22px;
-  height: 22px;
-}
-
-
-#links {
-  display: flex;
-  gap: 10px;
-  max-width: 50%;
-}
-
-#scroll-arrow {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-#scroll-arrow.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-.arrow-icon {
-  width: 30px;
-  height: 30px;
-  stroke: black;
-  stroke-width: 2;
-  fill: none;
+    margin: 0;
+    line-height: 1.7;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
-  #about {
-    padding: 15px;
-  }
+    #about {
+        padding: 40px 24px;
+        height: auto;
+        min-height: calc(100vh - 56px);
+    }
 
-  #hirono-img {
-    max-height: 20vh;
-  }
+    #about-inner {
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+        align-items: center;
+    }
 
-  #bio {
-    max-width: 90%;
-  }
+    #about-right {
+        align-items: center;
+    }
 
-  #links {
-    max-width: 90%;
-    gap: 8px;
-  }
+    #hirono-img {
+        max-height: 200px;
+    }
 
-  .icon-link {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-  }
-
-  .icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  #scroll-arrow {
-    bottom: 20px;
-  }
-
-  .arrow-icon {
-    width: 26px;
-    height: 26px;
-  }
+    #bio {
+        max-width: 90%;
+    }
 }
 
 @media (max-width: 480px) {
-  #about {
-    padding: 10px;
-  }
+    #about {
+        padding: 32px 16px;
+    }
 
-  #intro {
-    gap: 8px;
-  }
-
-  #hirono-img {
-    max-height: 18vh;
-  }
-
-  #bio,
-  #links {
-    max-width: 95%;
-  }
+    #hirono-img {
+        max-height: 160px;
+    }
 }
