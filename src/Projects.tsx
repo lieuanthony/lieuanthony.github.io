@@ -55,14 +55,14 @@ export const projects: Project[] = [
         media: [
             {
                 type: "image",
-                src: "",
+                src: "/assets/images/todo-aws.png",
                 alt: "AWS architecture diagram",
                 title: "System Architecture & Design",
                 label: "AWS Infrastructure Layout",
             },
             {
                 type: "image",
-                src: "",
+                src: "/assets/images/todo-dashboard.png",
                 alt: "Todo dashboard screenshot",
                 title: "Application Interface",
                 label: "Task Management Dashboard",
@@ -133,10 +133,10 @@ export default function Projects() {
                         onClick={() => navigate(`/projects/${project.id}`)}
                     >
                         <div className="card-image">
-                            {project.media[0]?.src ? (
+                            {project.media[1]?.src ? (
                                 <img
-                                    src={project.media[0].src}
-                                    alt={project.media[0].alt}
+                                    src={project.media[1].src}
+                                    alt={project.media[1].alt}
                                 />
                             ) : (
                                 <div className="card-image-placeholder" />
