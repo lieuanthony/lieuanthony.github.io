@@ -55,17 +55,17 @@ export const projects: Project[] = [
         media: [
             {
                 type: "image",
-                src: "/assets/images/todo-aws.png",
-                alt: "AWS architecture diagram",
-                title: "System Architecture & Design",
-                label: "AWS Infrastructure Layout",
-            },
-            {
-                type: "image",
-                src: "/assets/images/todo-dashboard.png",
+                src: "/assets/images/todo_list_dashboard.png",
                 alt: "Todo dashboard screenshot",
                 title: "Application Interface",
                 label: "Task Management Dashboard",
+            },
+            {
+                type: "image",
+                src: "/assets/images/todo_list_aws.png",
+                alt: "AWS architecture diagram",
+                title: "System Architecture & Design",
+                label: "AWS Infrastructure Layout",
             },
         ],
     },
@@ -102,17 +102,17 @@ export const projects: Project[] = [
         media: [
             {
                 type: "image",
-                src: "",
-                alt: "Sentiment dashboard",
-                title: "Application Dashboard",
+                src: "/assets/images/news_analyzer_dashboard.png",
+                alt: "Sentiment Dashboard Mockup",
+                title: "Application Interface Mockup",
                 label: "News Sentiment Visualization",
             },
             {
                 type: "image",
-                src: "",
-                alt: "Architecture diagram",
-                title: "System Architecture",
-                label: "Serverless Processing Pipeline",
+                src: "/assets/images/news_analyzer_aws.png",
+                alt: "AWS Architecture Diagram",
+                title: "System Architecture & Design",
+                label: "High Level Data Flow Architecture Diagram",
             },
         ],
     },
@@ -133,10 +133,10 @@ export default function Projects() {
                         onClick={() => navigate(`/projects/${project.id}`)}
                     >
                         <div className="card-image">
-                            {project.media[1]?.src ? (
+                            {project.media[0]?.src ? (
                                 <img
-                                    src={project.media[1].src}
-                                    alt={project.media[1].alt}
+                                    src={project.media[0].src}
+                                    alt={project.media[0].alt}
                                 />
                             ) : (
                                 <div className="card-image-placeholder" />
