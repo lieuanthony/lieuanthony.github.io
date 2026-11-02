@@ -32,7 +32,7 @@ mark, body::selection {
   background-color: rgba(0, 0, 128, 0.25);
 }
 
-#page-footer {
+#contact {
   height: auto;
   width: 100%;
   background-color: black;

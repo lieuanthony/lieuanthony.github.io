@@ -62,12 +62,21 @@
         padding: 0 16px;
     }
 
+    #nav-name {
+        display: none;
+    }
+
+    #nav-links {
+        gap: 12px;
+    }
+
     #nav-links a {
         font-size: 0.8rem;
     }
 
     #nav-resume {
         font-size: 0.75rem;
-        padding: 6px 14px;
+        padding: 6px 12px;
+        white-space: nowrap;
     }
 }

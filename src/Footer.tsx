@@ -2,7 +2,7 @@ import "./Footer.css";
 
 export default function Footer() {
     return (
-        <footer id="page-footer">
+        <footer id="contact">
             <div id="footer-inner">
                 <div id="footer-left">
                     <span className="footer-label">Contact</span>

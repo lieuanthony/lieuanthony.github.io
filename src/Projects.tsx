@@ -89,11 +89,11 @@ export const projects: Project[] = [
         ],
 
         contributions: [
-            "Developed serverless backend pipeline using AWS Lambda and API Gateway",
-            "Integrated AWS Comprehend to perform sentiment analysis on financial news",
-            "Stored processed sentiment results in RDS MySQL database",
-            "Built React dashboard to display articles and sentiment scores",
-            "Automated infrastructure provisioning with Terraform",
+            "Architected a serverless backend that decouples ingestion, sentiment processing, and data serving, keeping the dashboard responsive during heavy ingestion",
+            "Implemented real-time news ingestion and sentiment scoring for the Nasdaq-100, loading about 1,000 articles initially then processing roughly 10 per stock per minute",
+            "Designed interactive sentiment charts across hourly, daily, and weekly timeframes, with a companion price chart to compare sentiment shifts against price movement",
+            "Created email notifications that alert users whenever sentiment changes for a stock on their watchlist",
+            "Automated environment setup and teardown with Terraform to remove manual deployment steps",
         ],
 
         githubLink: null,
