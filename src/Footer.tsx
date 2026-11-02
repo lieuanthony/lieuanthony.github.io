@@ -10,11 +10,7 @@ export default function Footer() {
                     <a id="footer-email" href="mailto:anthonyjunlieu@gmail.com">
                         anthonyjunlieu@gmail.com →
                     </a>
-                </div>
-
-                <div id="footer-right">
-                    <div className="footer-col">
-                        <span className="footer-label">Social</span>
+                    <div id="footer-social">
                         <a href="https://www.linkedin.com/in/lieuanthony/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
                         <a href="https://github.com/lieuanthony" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                     </div>

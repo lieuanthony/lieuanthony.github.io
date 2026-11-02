@@ -48,26 +48,20 @@
     opacity: 0.6;
 }
 
-#footer-right {
+#footer-social {
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: 24px;
 }
 
-.footer-col {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.footer-col a {
+#footer-social a {
     color: white;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     transition: opacity 0.2s ease;
 }
 
-.footer-col a:hover {
+#footer-social a:hover {
     opacity: 0.6;
 }
 
@@ -89,10 +83,6 @@
         flex-direction: column;
         gap: 60px;
         padding: 60px 24px;
-    }
-
-    #footer-right {
-        gap: 60px;
     }
 
     #footer-bottom {
