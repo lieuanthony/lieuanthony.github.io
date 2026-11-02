@@ -14,12 +14,6 @@ export default function Footer() {
 
                 <div id="footer-right">
                     <div className="footer-col">
-                        <span className="footer-label">Navigate</span>
-                        <a href="#about">About</a>
-                        <a href="#experience">Experience</a>
-                        <a href="#projects">Projects</a>
-                    </div>
-                    <div className="footer-col">
                         <span className="footer-label">Social</span>
                         <a href="https://www.linkedin.com/in/lieuanthony/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
                         <a href="https://github.com/lieuanthony" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
