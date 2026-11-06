@@ -115,18 +115,18 @@ export const projects: Project[] = [
 
 export default function Projects() {
     return (
-        <section id="projects">
-            <h2 className="section-title">Projects</h2>
+        <section id="projects" className="home-section">
+            <header className="section-head">
+                <span className="section-num">02</span>
+                <h2 className="section-title">Projects</h2>
+            </header>
 
-            <div className="projects-grid">
+            <div className="projects-list">
                 {projects.map((project) => (
                     <Link className="project-card" key={project.id} to={`/projects/${project.id}`}>
                         <div className="card-image">
                             {project.media[0]?.src ? (
-                                <img
-                                    src={project.media[0].src}
-                                    alt={project.media[0].alt}
-                                />
+                                <img src={project.media[0].src} alt={project.media[0].alt} />
                             ) : (
                                 <div className="card-image-placeholder" />
                             )}
@@ -135,6 +135,10 @@ export default function Projects() {
                         <div className="card-info">
                             <span className="card-subtitle">{project.type}</span>
                             <span className="card-title">{project.title}</span>
+                            <p className="card-overview">{project.overview}</p>
+                            <span className="card-more">
+                                {project.caseStudy ? "Read the case study" : "View project"} <span aria-hidden="true">→</span>
+                            </span>
                         </div>
                     </Link>
                 ))}

@@ -41,3 +41,58 @@ mark, body::selection {
   justify-content: center;
   align-items: center;
 }
+/* Home sections share a width and a numbered heading. */
+.home-section {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: 96px 48px;
+    box-sizing: border-box;
+    scroll-margin-top: 56px;
+}
+
+.section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.section-num {
+    font-size: 1rem;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+    .home-section {
+        padding: 64px 24px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-section {
+        padding: 48px 20px;
+    }
+
+    .section-head {
+        margin-bottom: 28px;
+        padding-bottom: 16px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
