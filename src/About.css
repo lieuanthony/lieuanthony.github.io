@@ -41,28 +41,6 @@
     line-height: 1.8;
 }
 
-/* What I'm doing now, with a navy marker. */
-#about-now {
-    margin: 0;
-    padding: 14px 18px;
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    font-size: 0.98rem;
-    line-height: 1.7;
-    border-left: 2px solid var(--navy);
-    background: rgba(0, 0, 128, 0.04);
-}
-
-.now-dot {
-    flex: none;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--navy);
-    translate: 0 -1px;
-}
-
 #about-actions {
     display: flex;
     flex-wrap: wrap;

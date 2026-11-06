@@ -10,14 +10,8 @@ export default function About() {
                     <p id="bio">
                         I enjoy all things problem-solving, from coding to playing video games and bouldering.
                         I'm especially interested in building web applications with <mark>cloud technologies</mark> to
-                        create scalable and reliable systems.
-                    </p>
-                    <p id="about-now">
-                        <span className="now-dot" aria-hidden="true" />
-                        <span>
-                            Software Engineer Co-op at <mark>Paychex</mark>, working on <mark>OpenShift</mark>{" "}
-                            platform tooling.
-                        </span>
+                        create scalable and reliable systems. Right now I'm a Software Engineer Co-op at <mark>Paychex</mark>,
+                        working on <mark>OpenShift</mark> platform tooling.
                     </p>
                     <div id="about-actions">
                         <a className="about-button" href="#projects">

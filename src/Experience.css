@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: 220px minmax(0, 1fr);
     gap: 48px;
-    padding: 40px 0;
+    padding: 32px 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -62,34 +62,6 @@
     color: rgba(0, 0, 0, 0.8);
 }
 
-/* A couple of numbers from the work, set off with a navy rule. */
-.experience-highlights {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-    margin: 10px 0 0;
-}
-
-.experience-highlights div {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding-left: 16px;
-    border-left: 2px solid var(--navy);
-}
-
-.experience-highlights dt {
-    font-size: 1.4rem;
-    font-weight: bold;
-}
-
-.experience-highlights dd {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: rgba(0, 0, 0, 0.6);
-}
-
 @media (max-width: 768px) {
     .experience-item {
         grid-template-columns: minmax(0, 1fr);
@@ -125,17 +97,4 @@
         font-size: 1rem;
     }
 
-    .experience-highlights {
-        order: 4;
-        gap: 16px;
-        margin-top: 8px;
-    }
-
-    .experience-highlights dt {
-        font-size: 1.2rem;
-    }
-
-    .experience-highlights dd {
-        font-size: 0.85rem;
-    }
 }

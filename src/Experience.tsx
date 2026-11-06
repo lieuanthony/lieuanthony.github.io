@@ -1,10 +1,5 @@
 import "./Experience.css";
 
-interface Highlight {
-    figure: string;
-    label: string;
-}
-
 interface Experience {
     id: string;
     company: string;
@@ -12,9 +7,8 @@ interface Experience {
     /** The kind of work and the team it was with. */
     focus: string;
     period: string;
-    /** A short first-person account of the work, not resume bullets. */
-    statement: string[];
-    highlights: Highlight[];
+    /** A sentence or two, in my own words. */
+    summary: string;
 }
 
 const experiences: Experience[] = [
@@ -24,14 +18,8 @@ const experiences: Experience[] = [
         role: "Software Engineer Co-op",
         focus: "Platform engineering · Peas in a Pod team",
         period: "May 2026 — Present",
-        statement: [
-            "On the Peas in a Pod team I work on the platform Paychex developers use to build and ship to OpenShift. Most of my work is about making that path safer and less manual: I automated a move to new CRD versions across hundreds of repositories, added build-time policy checks so misconfigured apps are caught before they deploy, and fixed a heap-dump loop in the shared Java base image.",
-            "I also take weekly turns on the team's support queue, working through build and deployment failures with the developers who hit them. Seeing where people get stuck shapes what I build next.",
-        ],
-        highlights: [
-            { figure: "400+", label: "repositories migrated automatically" },
-            { figure: "50%", label: "less waiting on support answers" },
-        ],
+        summary:
+            "I work on the platform Paychex developers use to ship to OpenShift, mostly automating manual work and catching bad configs before they deploy. I also help developers with build and deployment issues on our support rotation.",
     },
     {
         id: "rit",
@@ -39,14 +27,8 @@ const experiences: Experience[] = [
         role: "Software Engineer Co-op",
         focus: "Full stack engineering",
         period: "January 2026 — May 2026",
-        statement: [
-            "I helped build the tool the department uses to run its co-op program, from the database up. I modeled the schema for projects, proposals, interest forms and applicants, wrote the API behind them, and built the dashboard coordinators and supervisors work in, with table, card and kanban views.",
-            "I also extended role-based access so each of the six user roles only sees and does what it should. Working across the whole stack meant taking each feature from requirements to schema to screen.",
-        ],
-        highlights: [
-            { figure: "15+", label: "API endpoints built" },
-            { figure: "6", label: "user roles with their own access" },
-        ],
+        summary:
+            "I built features for the department's co-op program tool across the whole stack, from the database and API to the dashboard coordinators use every day.",
     },
     {
         id: "excellus",
@@ -54,14 +36,8 @@ const experiences: Experience[] = [
         role: "Software Engineer in Test Co-op",
         focus: "QA engineering · Architecture and Test Automation team",
         period: "June 2025 — August 2025",
-        statement: [
-            "On the Architecture and Test Automation team I worked on shared libraries that other engineering teams rely on in production. I wrote the unit and integration tests they were missing, added UI and API automation tests, and traced a production logging bug through library code to fix errors being reported as the wrong type.",
-            "Keeping changelogs and documentation accurate was part of the job too. That summer showed me that tests and clear docs are what let teams trust code they didn't write.",
-        ],
-        highlights: [
-            { figure: "90–100%", label: "test coverage, up from 30–40%" },
-            { figure: "120+", label: "automated tests added" },
-        ],
+        summary:
+            "I wrote tests for the shared libraries other teams depend on, taking coverage from 30–40% to over 90%, and fixed a production logging bug along the way.",
     },
 ];
 
@@ -84,19 +60,7 @@ export default function Experience() {
                         <div className="experience-main">
                             <h3 className="experience-company">{exp.company}</h3>
                             <p className="experience-focus">{exp.focus}</p>
-                            {exp.statement.map((para, i) => (
-                                <p className="experience-statement" key={i}>
-                                    {para}
-                                </p>
-                            ))}
-                            <dl className="experience-highlights">
-                                {exp.highlights.map((h) => (
-                                    <div key={h.label}>
-                                        <dt>{h.figure}</dt>
-                                        <dd>{h.label}</dd>
-                                    </div>
-                                ))}
-                            </dl>
+                            <p className="experience-statement">{exp.summary}</p>
                         </div>
                     </li>
                 ))}
