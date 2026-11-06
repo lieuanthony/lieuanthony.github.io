@@ -81,17 +81,10 @@
     font-size: 0.85rem;
 }
 
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tech-pill {
-    font-size: 0.75rem;
-    padding: 4px 8px;
-    border-radius: 999px;
-    background-color: rgba(0, 0, 128, 0.15);
+.tech-list {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
 }
 
 /* Links section */
@@ -160,10 +153,5 @@
 
     .detail-title {
         font-size: 1.5rem;
-    }
-
-    .tech-pill {
-        font-size: 0.7rem;
-        padding: 3px 7px;
     }
 }

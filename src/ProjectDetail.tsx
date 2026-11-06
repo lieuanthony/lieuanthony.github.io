@@ -51,13 +51,7 @@ export default function ProjectDetail() {
                 <div className="detail-section">
                     <h2>Technologies</h2>
 
-                    <div className="tech-stack">
-                        {project.tech.map((t) => (
-                            <span className="tech-pill" key={t}>
-                                {t}
-                            </span>
-                        ))}
-                    </div>
+                    <p className="tech-list">{project.tech.join(" · ")}</p>
                 </div>
 
                 <div className="detail-media">

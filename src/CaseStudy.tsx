@@ -45,25 +45,32 @@ interface Props {
 
 const num = (i: number) => String(i + 1).padStart(2, "0");
 
-function Item({ item }: { item: string | Term }) {
-    if (typeof item === "string") return <li>{item}</li>;
-    return (
-        <li>
-            <strong>{item.term}</strong> {item.text}
-        </li>
-    );
-}
+/** "Instant feedback." reads as a label in the left column, so its full stop goes. */
+const label = (term: string) => term.replace(/\.$/, "");
 
 function BlockView({ block }: { block: Block }) {
     if ("p" in block) return <p>{block.p}</p>;
-    if ("list" in block)
+    if ("list" in block) {
+        // A list of terms is a two-column table of rows; plain items are bullets.
+        if (block.list.every((item) => typeof item !== "string"))
+            return (
+                <ul className="cs-terms">
+                    {(block.list as Term[]).map((t) => (
+                        <li key={t.term}>
+                            <strong>{label(t.term)}</strong>
+                            <span>{t.text}</span>
+                        </li>
+                    ))}
+                </ul>
+            );
         return (
             <ul className="cs-list">
                 {block.list.map((item, i) => (
-                    <Item key={i} item={item} />
+                    <li key={i}>{typeof item === "string" ? item : `${item.term} ${item.text}`}</li>
                 ))}
             </ul>
         );
+    }
     if ("steps" in block)
         return (
             <ol className="cs-steps">
@@ -73,7 +80,8 @@ function BlockView({ block }: { block: Block }) {
                             {i + 1}
                         </span>
                         <div>
-                            <strong>{s.term}</strong> {s.text}
+                            <strong>{label(s.term)}</strong>
+                            <span>{s.text}</span>
                         </div>
                     </li>
                 ))}
@@ -112,26 +120,18 @@ export default function CaseStudyView({ type, title, tech, study }: Props) {
                     </div>
                 </header>
 
-                <section className="cs-glance" aria-label="At a glance">
-                    <dl>
-                        {study.glance.map((g) => (
-                            <div key={g.term}>
-                                <dt>{g.term}</dt>
-                                <dd>{g.text}</dd>
-                            </div>
-                        ))}
-                    </dl>
-                    <div className="cs-tech">
-                        <p className="cs-label">Built with</p>
-                        <div className="tech-stack">
-                            {tech.map((t) => (
-                                <span className="tech-pill" key={t}>
-                                    {t}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <ul className="cs-glance" aria-label="At a glance">
+                    {study.glance.map((g) => (
+                        <li key={g.term}>
+                            <strong>{g.term}</strong>
+                            <span>{g.text}</span>
+                        </li>
+                    ))}
+                    <li className="cs-glance-wide">
+                        <strong>Built with</strong>
+                        <span>{tech.join(" · ")}</span>
+                    </li>
+                </ul>
 
                 <div className="cs-body">
                     <nav className="cs-toc" aria-label="On this page">

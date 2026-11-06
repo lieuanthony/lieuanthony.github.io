@@ -6,7 +6,7 @@ export const fluently: CaseStudy = {
         "A free web app that helps people speak without filler words. You answer a question out loud, and it shows every \"um\", every pause in the middle of a sentence, and every phrase you repeat, then scores the answer. Speech is turned into text inside your browser, so your audio stays on your own device unless you choose to save it.",
 
     liveLink: "https://fluently-one-ruby.vercel.app",
-    codeNote: "The GitHub repository is private. Code samples are available on request.",
+    codeNote: "The GitHub repository is private.",
 
     glance: [
         { term: "Role", text: "Solo: product, design, and engineering" },
