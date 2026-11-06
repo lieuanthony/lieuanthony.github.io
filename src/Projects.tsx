@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./Projects.css";
+import type { CaseStudy } from "./CaseStudy";
+import { fluently } from "./caseStudies/fluently";
 
 export interface Project {
     id: string;
@@ -18,56 +20,49 @@ export interface Project {
         label?: string;
         title?: string;
     }[];
+
+    /** A long-form write-up. When set, the project page shows it instead of the short layout. */
+    caseStudy?: CaseStudy;
 }
 
 export const projects: Project[] = [
     {
-        id: "overengineered-todo-list",
-        title: "Over-Engineered Todo List",
+        id: "fluently",
+        title: "Fluently",
         type: "Personal Project",
 
         overview:
-            "Production-grade todo application intentionally built with enterprise infrastructure to explore real-world backend architecture, container orchestration, and cloud deployment patterns.",
+            "Free speaking-practice web app that marks filler words, mid-phrase pauses, and repeats in your answers, with speech transcribed privately in the browser.",
 
         tech: [
             "TypeScript",
-            "Next.js",
-            "Express.js",
-            "Prisma",
+            "React",
+            "Vite",
+            "Whisper (transformers.js)",
+            "Web Workers",
+            "Supabase",
             "PostgreSQL",
-            "Docker",
-            "Kubernetes",
-            "AWS",
-            "Terraform",
+            "Deno Edge Functions",
+            "Gemini API",
+            "Vercel",
+            "Vitest",
             "GitHub Actions",
         ],
 
-        contributions: [
-            "Architected full-stack application with Next.js frontend and Express.js API using Prisma ORM and PostgreSQL",
-            "Containerized services with Docker and deployed to AWS EKS using Kubernetes",
-            "Provisioned AWS infrastructure using Terraform modules",
-            "Implemented CI/CD pipeline with GitHub Actions automating build and deployment workflows",
-        ],
+        contributions: [],
 
-        githubLink: "https://github.com/lieuanthony/overengineered-todo-list",
-        liveLink: null,
+        githubLink: null,
+        liveLink: "https://fluently-one-ruby.vercel.app",
 
         media: [
             {
                 type: "image",
-                src: "/assets/images/todo_list_dashboard.png",
-                alt: "Todo dashboard screenshot",
-                title: "Application Interface",
-                label: "Task Management Dashboard",
-            },
-            {
-                type: "image",
-                src: "/assets/images/todo_list_aws.png",
-                alt: "AWS architecture diagram",
-                title: "System Architecture & Design",
-                label: "AWS Infrastructure Layout",
+                src: "/assets/images/fluently_landing.png",
+                alt: "Fluently landing page",
             },
         ],
+
+        caseStudy: fluently,
     },
 
     {

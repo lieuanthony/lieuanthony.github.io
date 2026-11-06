@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { projects } from "./Projects";
 import "./ProjectDetail.css";
+import CaseStudyView from "./CaseStudy";
 
 export default function ProjectDetail() {
     const { id } = useParams<{ id: string }>();
@@ -24,6 +25,10 @@ export default function ProjectDetail() {
                 </div>
             </section>
         );
+    }
+
+    if (project.caseStudy) {
+        return <CaseStudyView type={project.type} title={project.title} tech={project.tech} study={project.caseStudy} />;
     }
 
     return (
