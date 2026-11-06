@@ -49,7 +49,7 @@ export default function Navbar() {
                 ))}
             </div>
             <a id="nav-resume" href="/assets/Lieu_Anthony_Resume.pdf" target="_blank" rel="noopener noreferrer">
-                View Resume
+                Resume <span aria-hidden="true">↗</span>
             </a>
         </nav>
     );

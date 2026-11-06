@@ -67,8 +67,12 @@
     color: white;
     background-color: black;
     font-size: 0.9rem;
-    padding: 8px 18px;
-    border-radius: 999px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 8px;
     transition: opacity var(--hover) var(--ease-out), transform var(--hover) var(--ease-out);
 }
 

@@ -100,6 +100,8 @@
 
     .card-image {
         aspect-ratio: 16 / 9;
+        /* With an aspect ratio, a min-height would force the width past the card. */
+        min-height: 0;
         border-right: 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
@@ -131,20 +133,20 @@
     border-color: rgba(0, 0, 0, 0.1);
 }
 
+/* The school's tile, centered on its own orange. */
 .card-image-locked {
     position: relative;
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     place-items: center;
-    background:
-        repeating-linear-gradient(135deg, rgba(0, 0, 128, 0.04) 0 12px, transparent 12px 24px),
-        rgba(0, 0, 128, 0.05);
+    background: rgb(242, 82, 9);
 }
 
-.locked-wordmark {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: bold;
-    letter-spacing: 0.08em;
-    color: rgba(0, 0, 128, 0.35);
+.card-image .locked-logo {
+    width: min(60%, 260px);
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .locked-badge {
@@ -154,7 +156,7 @@
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    background: var(--navy);
+    background: rgba(0, 0, 0, 0.75);
     color: white;
 }
 

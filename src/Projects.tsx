@@ -37,20 +37,7 @@ export const projects: Project[] = [
         overview:
             "Free speaking-practice web app that marks filler words, mid-phrase pauses, and repeats in your answers, with speech transcribed privately in the browser.",
 
-        tech: [
-            "TypeScript",
-            "React",
-            "Vite",
-            "Whisper (transformers.js)",
-            "Web Workers",
-            "Supabase",
-            "PostgreSQL",
-            "Deno Edge Functions",
-            "Gemini API",
-            "Vercel",
-            "Vitest",
-            "GitHub Actions",
-        ],
+        tech: ["TypeScript", "React", "Whisper", "Supabase", "Gemini", "Vercel"],
 
         contributions: [],
 
@@ -112,10 +99,7 @@ function ProjectInfo({ project }: { project: Project }) {
                             Case Study <LockIcon />
                         </span>
                     </div>
-                    <p className="card-locked-note">
-                        Private to RIT.{" "}
-                        <a href="mailto:anthonyjunlieu@gmail.com?subject=SCOOP%20Portal">Ask me about it</a>
-                    </p>
+                    <p className="card-locked-note">Private to RIT.</p>
                 </div>
             ) : (
                 <span className="card-more">
@@ -139,7 +123,7 @@ export default function Projects() {
                     project.locked ? (
                         <article className="project-card is-locked" key={project.id}>
                             <div className="card-image card-image-locked">
-                                <span className="locked-wordmark">{project.title.split(" ")[0]}</span>
+                                <img className="locked-logo" src="/assets/images/rit.png" alt="RIT" />
                                 <span className="locked-badge">
                                     <LockIcon />
                                 </span>

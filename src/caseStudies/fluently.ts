@@ -9,12 +9,9 @@ export const fluently: CaseStudy = {
     codeNote: "The GitHub repository is private.",
 
     glance: [
-        { term: "Role", text: "Solo: product, design, and engineering" },
-        { term: "Timeline", text: "November 2026, live and in active development" },
-        { term: "Platform", text: "Web app for desktop and mobile browsers" },
-        { term: "Cost to run", text: "$0: free tiers only, no paid AI" },
-        { term: "Question bank", text: "372 questions across 12 fields" },
-        { term: "Tests", text: "About 400 automated tests, run on every pull request" },
+        { term: "Role", text: "Solo" },
+        { term: "Status", text: "Live, in active development" },
+        { term: "Cost to run", text: "$0" },
     ],
 
     sections: [
