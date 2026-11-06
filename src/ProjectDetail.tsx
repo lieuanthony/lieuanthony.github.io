@@ -2,10 +2,11 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { projects } from "./Projects";
 import "./ProjectDetail.css";
+import CaseStudyView from "./CaseStudy";
 
 export default function ProjectDetail() {
     const { id } = useParams<{ id: string }>();
-    const project = projects.find((p) => p.id === id);
+    const project = projects.find((p) => p.id === id && !p.locked);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -17,7 +18,7 @@ export default function ProjectDetail() {
                 <div className="detail-container">
 
                     <Link to="/#projects" className="back-link">
-                        &larr; Back to Work
+                        &larr; Back
                     </Link>
 
                     <p>Project not found.</p>
@@ -26,12 +27,16 @@ export default function ProjectDetail() {
         );
     }
 
+    if (project.caseStudy) {
+        return <CaseStudyView type={project.type} title={project.title} tech={project.tech} study={project.caseStudy} />;
+    }
+
     return (
         <section id="project-detail">
             <div className="detail-container">
 
                 <Link to="/#projects" className="back-link">
-                    &larr; Back to Work
+                    &larr; Back
                 </Link>
 
                 <p className="project-type">{project.type}</p>
@@ -46,13 +51,7 @@ export default function ProjectDetail() {
                 <div className="detail-section">
                     <h2>Technologies</h2>
 
-                    <div className="tech-stack">
-                        {project.tech.map((t) => (
-                            <span className="tech-pill" key={t}>
-                                {t}
-                            </span>
-                        ))}
-                    </div>
+                    <p className="tech-list">{project.tech.join(" · ")}</p>
                 </div>
 
                 <div className="detail-media">

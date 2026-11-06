@@ -15,6 +15,13 @@
 #nav-name {
     font-weight: bold;
     font-size: 0.95rem;
+    color: black;
+    text-decoration: none;
+    transition: color var(--hover) var(--ease-out);
+}
+
+#nav-name:hover {
+    color: rgba(0, 0, 0, 0.5);
 }
 
 #nav-links {
@@ -25,26 +32,57 @@
 #nav-links a {
     text-decoration: none;
     color: black;
-    font-size: 0.9rem;
-    transition: opacity 0.15s ease;
+    font-size: 0.95rem;
+    transition: color var(--hover) var(--ease-out);
+}
+
+#nav-links a {
+    position: relative;
+    padding: 4px 0;
 }
 
 #nav-links a:hover {
-    opacity: 0.5;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* The section on screen, in navy with a rule under it. */
+#nav-links a[aria-current="location"] {
+    color: var(--navy);
+    font-weight: bold;
+}
+
+#nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: var(--navy);
+    scale: 0 1;
+    transition: scale var(--hover) var(--ease-out);
+}
+
+#nav-links a[aria-current="location"]::after {
+    scale: 1 1;
 }
 
 #nav-resume {
     text-decoration: none;
     color: white;
     background-color: black;
-    font-size: 0.85rem;
-    padding: 8px 18px;
-    border-radius: 999px;
-    transition: opacity 0.15s ease;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 8px;
+    transition: background-color var(--hover) var(--ease-out), transform var(--hover) var(--ease-out);
 }
 
 #nav-resume:hover {
-    opacity: 0.75;
+    background-color: rgb(64, 64, 64);
 }
 
 @media (max-width: 768px) {

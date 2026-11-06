@@ -1,82 +1,80 @@
 #about {
-    height: calc(100vh - 56px);
+    min-height: calc(100vh - 56px);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 48px;
+    padding: 64px 48px;
+    box-sizing: border-box;
 }
 
 #about-inner {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     gap: 64px;
-    max-width: 860px;
-    width: 100%;
+    width: min(1024px, 100%);
 }
 
-#about-left {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#hirono-img {
-    max-height: 280px;
-}
-
-#about-right {
+#about-text {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
+    max-width: 62ch;
+}
+
+#about-eyebrow {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.55);
 }
 
 #name {
     margin: 0;
-    font-weight: bold;
-    font-size: 1.1rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
 }
 
 #bio {
     margin: 0;
-    line-height: 1.7;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+#hirono-img {
+    flex: none;
+    max-height: 300px;
 }
 
 @media (max-width: 768px) {
     #about {
-        padding: 40px 24px;
-        height: auto;
-        min-height: calc(100vh - 56px);
+        min-height: 0;
+        padding: 40px 24px 32px;
     }
 
     #about-inner {
-        flex-direction: column;
-        gap: 32px;
-        text-align: center;
-        align-items: center;
-    }
-
-    #about-right {
-        align-items: center;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 28px;
     }
 
     #hirono-img {
-        max-height: 200px;
-    }
-
-    #bio {
-        max-width: 90%;
+        max-height: 180px;
+        align-self: center;
     }
 }
 
 @media (max-width: 480px) {
     #about {
-        padding: 32px 16px;
+        padding: 32px 20px 24px;
     }
 
-    #hirono-img {
-        max-height: 160px;
+    #about-text {
+        gap: 16px;
     }
+
+    #bio {
+        font-size: 1rem;
+    }
+
 }

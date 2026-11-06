@@ -1,5 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Projects.css";
+import type { CaseStudy } from "./CaseStudy";
+import { fluently } from "./caseStudies/fluently";
 
 export interface Project {
     id: string;
@@ -18,136 +20,115 @@ export interface Project {
         label?: string;
         title?: string;
     }[];
+
+    /** A long-form write-up. When set, the project page shows it instead of the short layout. */
+    caseStudy?: CaseStudy;
+
+    /** Private work: shown on the home page with its links locked, and no project page. */
+    locked?: boolean;
 }
 
 export const projects: Project[] = [
     {
-        id: "overengineered-todo-list",
-        title: "Over-Engineered Todo List",
+        id: "fluently",
+        title: "Fluently",
         type: "Personal Project",
 
         overview:
-            "Production-grade todo application intentionally built with enterprise infrastructure to explore real-world backend architecture, container orchestration, and cloud deployment patterns.",
+            "Free speaking-practice web app that marks filler words, mid-phrase pauses, and repeats in your answers, with speech transcribed privately in the browser.",
 
-        tech: [
-            "TypeScript",
-            "Next.js",
-            "Express.js",
-            "Prisma",
-            "PostgreSQL",
-            "Docker",
-            "Kubernetes",
-            "AWS",
-            "Terraform",
-            "GitHub Actions",
-        ],
+        tech: ["TypeScript", "React", "Whisper", "Supabase", "Gemini", "Vercel"],
 
-        contributions: [
-            "Architected full-stack application with Next.js frontend and Express.js API using Prisma ORM and PostgreSQL",
-            "Containerized services with Docker and deployed to AWS EKS using Kubernetes",
-            "Provisioned AWS infrastructure using Terraform modules",
-            "Implemented CI/CD pipeline with GitHub Actions automating build and deployment workflows",
-        ],
+        contributions: [],
 
-        githubLink: "https://github.com/lieuanthony/overengineered-todo-list",
-        liveLink: null,
+        githubLink: null,
+        liveLink: "https://fluently-one-ruby.vercel.app",
 
         media: [
             {
                 type: "image",
-                src: "/assets/images/todo_list_dashboard.png",
-                alt: "Todo dashboard screenshot",
-                title: "Application Interface",
-                label: "Task Management Dashboard",
-            },
-            {
-                type: "image",
-                src: "/assets/images/todo_list_aws.png",
-                alt: "AWS architecture diagram",
-                title: "System Architecture & Design",
-                label: "AWS Infrastructure Layout",
+                src: "/assets/images/fluently_landing.png",
+                alt: "Fluently landing page",
             },
         ],
+
+        caseStudy: fluently,
     },
 
     {
-        id: "intelligent-stock-market-news-analyzer",
-        title: "Intelligent Stock Market News Analyzer",
-        type: "Course Project",
+        id: "scoop-portal",
+        title: "SCOOP Portal",
+        type: "Co-op Project · RIT",
 
         overview:
-            "Cloud-based application that analyzes financial news sentiment using AWS Comprehend and stores results for real-time browsing through a React frontend.",
+            "The portal RIT's software engineering department uses to run its co-op program: projects, proposals, interest forms, and applicants in one place, with access set by role.",
 
-        tech: [
-            "Python",
-            "React",
-            "MySQL",
-            "AWS Lambda",
-            "API Gateway",
-            "Terraform",
-            "GitHub Actions",
-        ],
-
-        contributions: [
-            "Architected a serverless backend that decouples ingestion, sentiment processing, and data serving, keeping the dashboard responsive during heavy ingestion",
-            "Implemented real-time news ingestion and sentiment scoring for the Nasdaq-100, loading about 1,000 articles initially then processing roughly 10 per stock per minute",
-            "Designed interactive sentiment charts across hourly, daily, and weekly timeframes, with a companion price chart to compare sentiment shifts against price movement",
-            "Created email notifications that alert users whenever sentiment changes for a stock on their watchlist",
-            "Automated environment setup and teardown with Terraform to remove manual deployment steps",
-        ],
+        tech: [],
+        contributions: [],
 
         githubLink: null,
         liveLink: null,
+        media: [],
 
-        media: [
-            {
-                type: "image",
-                src: "/assets/images/news_analyzer_dashboard.png",
-                alt: "Sentiment Dashboard Mockup",
-                title: "Application Interface Mockup",
-                label: "News Sentiment Visualization",
-            },
-            {
-                type: "image",
-                src: "/assets/images/news_analyzer_aws.png",
-                alt: "AWS Architecture Diagram",
-                title: "System Architecture & Design",
-                label: "High Level Data Flow Architecture Diagram",
-            },
-        ],
+        locked: true,
     },
 ];
 
-export default function Projects() {
-    const navigate = useNavigate();
-
+function LockIcon() {
     return (
-        <section id="projects">
-            <h2 className="section-title">Projects</h2>
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" className="lock-icon">
+            <rect x="5" y="11" width="14" height="10" rx="2" />
+            <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+        </svg>
+    );
+}
 
-            <div className="projects-grid">
+export default function Projects() {
+    return (
+        <section id="projects" className="home-section">
+            <header className="section-head">
+                <span className="section-num">02</span>
+                <h2 className="section-title">Projects</h2>
+            </header>
+
+            <div className="projects-list">
                 {projects.map((project) => (
-                    <div
-                        className="project-card"
-                        key={project.id}
-                        onClick={() => navigate(`/projects/${project.id}`)}
-                    >
-                        <div className="card-image">
-                            {project.media[0]?.src ? (
-                                <img
-                                    src={project.media[0].src}
-                                    alt={project.media[0].alt}
-                                />
-                            ) : (
-                                <div className="card-image-placeholder" />
-                            )}
-                        </div>
+                    <article className="project-card" key={project.id}>
+                        {project.locked ? (
+                            <div className="card-image card-image-locked">
+                                <img className="locked-logo" src="/assets/images/rit.png" alt="RIT" />
+                                <span className="locked-badge">
+                                    <LockIcon />
+                                </span>
+                            </div>
+                        ) : (
+                            <div className="card-image">
+                                {project.media[0]?.src ? (
+                                    <img src={project.media[0].src} alt={project.media[0].alt} />
+                                ) : (
+                                    <div className="card-image-placeholder" />
+                                )}
+                            </div>
+                        )}
 
                         <div className="card-info">
                             <span className="card-subtitle">{project.type}</span>
-                            <span className="card-title">{project.title}</span>
+                            <h3 className="card-title">{project.title}</h3>
+                            <p className="card-overview">{project.overview}</p>
+                            <div className="card-actions">
+                                {project.locked ? (
+                                    <span className="card-button is-locked" aria-disabled="true">
+                                        Case Study <LockIcon />
+                                    </span>
+                                ) : (
+                                    <Link className="card-button" to={`/projects/${project.id}`}>
+                                        Case Study <span aria-hidden="true">→</span>
+                                    </Link>
+                                )}
+                            </div>
+                            {project.locked && <p className="card-locked-note">Private to RIT.</p>}
                         </div>
-                    </div>
+                    </article>
                 ))}
             </div>
         </section>
