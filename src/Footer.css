@@ -104,16 +104,6 @@
     padding: 24px max(48px, calc((100% - 1120px) / 2 + 48px));
 }
 
-#footer-bottom a {
-    color: rgba(255, 255, 255, 0.45);
-    text-decoration: none;
-    transition: color var(--hover) var(--ease-out);
-}
-
-#footer-bottom a:hover {
-    color: white;
-}
-
 @media (max-width: 768px) {
     #footer-inner {
         grid-template-columns: minmax(0, 1fr);

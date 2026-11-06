@@ -4,7 +4,6 @@ const links = [
     { label: "Email", value: "anthonyjunlieu@gmail.com", href: "mailto:anthonyjunlieu@gmail.com", external: false },
     { label: "LinkedIn", value: "in/lieuanthony", href: "https://www.linkedin.com/in/lieuanthony/", external: true },
     { label: "GitHub", value: "lieuanthony", href: "https://github.com/lieuanthony", external: true },
-    { label: "Resume", value: "PDF", href: "/assets/Lieu_Anthony_Resume.pdf", external: true },
 ];
 
 export default function Footer() {
@@ -37,7 +36,6 @@ export default function Footer() {
 
             <div id="footer-bottom">
                 <span>© {new Date().getFullYear()} Anthony Lieu</span>
-                <a href="#about">Back to top ↑</a>
             </div>
         </footer>
     );
