@@ -83,33 +83,6 @@ function LockIcon() {
     );
 }
 
-function ProjectInfo({ project }: { project: Project }) {
-    return (
-        <div className="card-info">
-            <span className="card-subtitle">{project.type}</span>
-            <span className="card-title">{project.title}</span>
-            <p className="card-overview">{project.overview}</p>
-            {project.locked ? (
-                <div className="card-locked">
-                    <div className="card-locked-buttons">
-                        <span className="locked-button" aria-disabled="true">
-                            Demo <LockIcon />
-                        </span>
-                        <span className="locked-button" aria-disabled="true">
-                            Case Study <LockIcon />
-                        </span>
-                    </div>
-                    <p className="card-locked-note">Private to RIT.</p>
-                </div>
-            ) : (
-                <span className="card-more">
-                    {project.caseStudy ? "Read the case study" : "View project"} <span aria-hidden="true">→</span>
-                </span>
-            )}
-        </div>
-    );
-}
-
 export default function Projects() {
     return (
         <section id="projects" className="home-section">
@@ -119,19 +92,16 @@ export default function Projects() {
             </header>
 
             <div className="projects-list">
-                {projects.map((project) =>
-                    project.locked ? (
-                        <article className="project-card is-locked" key={project.id}>
+                {projects.map((project) => (
+                    <article className="project-card" key={project.id}>
+                        {project.locked ? (
                             <div className="card-image card-image-locked">
                                 <img className="locked-logo" src="/assets/images/rit.png" alt="RIT" />
                                 <span className="locked-badge">
                                     <LockIcon />
                                 </span>
                             </div>
-                            <ProjectInfo project={project} />
-                        </article>
-                    ) : (
-                        <Link className="project-card" key={project.id} to={`/projects/${project.id}`}>
+                        ) : (
                             <div className="card-image">
                                 {project.media[0]?.src ? (
                                     <img src={project.media[0].src} alt={project.media[0].alt} />
@@ -139,10 +109,27 @@ export default function Projects() {
                                     <div className="card-image-placeholder" />
                                 )}
                             </div>
-                            <ProjectInfo project={project} />
-                        </Link>
-                    )
-                )}
+                        )}
+
+                        <div className="card-info">
+                            <span className="card-subtitle">{project.type}</span>
+                            <h3 className="card-title">{project.title}</h3>
+                            <p className="card-overview">{project.overview}</p>
+                            <div className="card-actions">
+                                {project.locked ? (
+                                    <span className="card-button is-locked" aria-disabled="true">
+                                        Case Study <LockIcon />
+                                    </span>
+                                ) : (
+                                    <Link className="card-button" to={`/projects/${project.id}`}>
+                                        Case Study <span aria-hidden="true">→</span>
+                                    </Link>
+                                )}
+                            </div>
+                            {project.locked && <p className="card-locked-note">Private to RIT.</p>}
+                        </div>
+                    </article>
+                ))}
             </div>
         </section>
     );

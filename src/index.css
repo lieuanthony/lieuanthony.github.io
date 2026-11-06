@@ -34,11 +34,6 @@ button:focus-visible {
     border-radius: 6px;
 }
 
-/* Cards keep their own rounded corners under the ring. */
-a.project-card:focus-visible {
-    border-radius: 16px;
-}
-
 /* Buttons give a little under the press. */
 #nav-resume:active,
 .cs-button:active,

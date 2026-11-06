@@ -24,8 +24,8 @@
 }
 
 .back-link:hover {
-    color: var(--navy);
-    border-color: var(--navy);
+    color: rgba(0, 0, 0, 0.6);
+    border-color: rgba(0, 0, 0, 0.4);
 }
 
 .detail-title {
@@ -107,9 +107,8 @@
 }
 
 .detail-link:hover {
-    background-color: rgba(0, 0, 128, 0.06);
-    border-color: var(--navy);
-    color: var(--navy);
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.35);
 }
 
 /* Smaller GitHub button */

@@ -21,7 +21,7 @@
 }
 
 #nav-name:hover {
-    color: var(--navy);
+    color: rgba(0, 0, 0, 0.5);
 }
 
 #nav-links {
@@ -42,7 +42,7 @@
 }
 
 #nav-links a:hover {
-    color: var(--navy);
+    color: rgba(0, 0, 0, 0.5);
 }
 
 /* The section on screen, in navy with a rule under it. */
@@ -82,7 +82,7 @@
 }
 
 #nav-resume:hover {
-    background-color: var(--navy);
+    background-color: rgb(64, 64, 64);
 }
 
 @media (max-width: 768px) {

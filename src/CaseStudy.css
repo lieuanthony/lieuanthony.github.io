@@ -59,7 +59,7 @@
 }
 
 .cs-button:hover {
-    background-color: var(--navy);
+    background-color: rgb(64, 64, 64);
 }
 
 .cs-code-note {
@@ -298,7 +298,7 @@
 }
 
 .cs-figure a:hover img {
-    border-color: rgba(0, 0, 128, 0.35);
+    border-color: rgba(0, 0, 0, 0.3);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
