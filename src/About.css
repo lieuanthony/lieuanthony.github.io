@@ -11,7 +11,7 @@
     flex-direction: row;
     align-items: center;
     gap: 64px;
-    max-width: 860px;
+    max-width: 920px;
     width: 100%;
 }
 
@@ -35,20 +35,20 @@
 #name {
     margin: 0;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.35rem;
 }
 
 #bio {
     margin: 0;
-    line-height: 1.7;
-    font-size: 0.9rem;
+    line-height: 1.8;
+    font-size: 1.05rem;
 }
 
 @media (max-width: 768px) {
     #about {
-        padding: 40px 24px;
+        padding: 48px 24px 24px;
         height: auto;
-        min-height: calc(100vh - 56px);
+        min-height: 0;
     }
 
     #about-inner {
@@ -67,13 +67,13 @@
     }
 
     #bio {
-        max-width: 90%;
+        max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     #about {
-        padding: 32px 16px;
+        padding: 40px 20px 16px;
     }
 
     #hirono-img {
