@@ -210,3 +210,11 @@
     font-weight: bold;
     text-underline-offset: 4px;
 }
+
+.card-title {
+    transition: color var(--hover) var(--ease-out);
+}
+
+.project-card:not(.is-locked):hover .card-title {
+    color: var(--navy);
+}

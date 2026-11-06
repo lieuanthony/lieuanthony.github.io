@@ -20,11 +20,12 @@
     text-decoration: none;
     color: black;
     border-bottom: 1px solid transparent;
-    transition: border-color var(--hover) var(--ease-out);
+    transition: border-color var(--hover) var(--ease-out), color var(--hover) var(--ease-out);
 }
 
 .back-link:hover {
-    border-color: rgba(0, 0, 0, 0.5);
+    color: var(--navy);
+    border-color: var(--navy);
 }
 
 .detail-title {
@@ -101,11 +102,14 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     padding: 10px 20px;
-    transition: background var(--hover) var(--ease-out), transform var(--hover) var(--ease-out);
+    transition: background-color var(--hover) var(--ease-out), border-color var(--hover) var(--ease-out),
+        color var(--hover) var(--ease-out), transform var(--hover) var(--ease-out);
 }
 
 .detail-link:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 128, 0.06);
+    border-color: var(--navy);
+    color: var(--navy);
 }
 
 /* Smaller GitHub button */

@@ -64,7 +64,7 @@
     padding: 18px 4px;
     color: white;
     text-decoration: none;
-    transition: background var(--hover) var(--ease-out), padding var(--hover) var(--ease-out);
+    transition: background-color var(--hover) var(--ease-out), padding var(--hover) var(--ease-out);
 }
 
 #footer-links a:hover {
@@ -81,8 +81,22 @@
     overflow-wrap: anywhere;
 }
 
+.footer-link-value,
+.footer-link-arrow {
+    transition: color var(--hover) var(--ease-out), translate var(--hover) var(--ease-out);
+}
+
 .footer-link-arrow {
     color: rgba(255, 255, 255, 0.65);
+}
+
+#footer-links a:hover .footer-link-value,
+#footer-links a:hover .footer-link-arrow {
+    color: white;
+}
+
+#footer-links a:hover .footer-link-arrow {
+    translate: 2px -2px;
 }
 
 #contact a:focus-visible {

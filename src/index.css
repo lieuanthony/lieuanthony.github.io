@@ -7,7 +7,7 @@
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
     /* Hover and focus color changes: quick enough to feel direct, slow enough to see. */
-    --hover: 240ms;
+    --hover: 300ms;
     /* A new page rises in quickly; the old one is not faded out, which reads as a delay. */
     --page-in: 180ms;
     --open: 280ms;

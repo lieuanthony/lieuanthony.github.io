@@ -17,6 +17,11 @@
     font-size: 0.95rem;
     color: black;
     text-decoration: none;
+    transition: color var(--hover) var(--ease-out);
+}
+
+#nav-name:hover {
+    color: var(--navy);
 }
 
 #nav-links {
@@ -28,7 +33,7 @@
     text-decoration: none;
     color: black;
     font-size: 0.95rem;
-    transition: opacity var(--hover) var(--ease-out);
+    transition: color var(--hover) var(--ease-out);
 }
 
 #nav-links a {
@@ -37,7 +42,7 @@
 }
 
 #nav-links a:hover {
-    opacity: 0.5;
+    color: var(--navy);
 }
 
 /* The section on screen, in navy with a rule under it. */
@@ -73,11 +78,11 @@
     gap: 8px;
     padding: 9px 16px;
     border-radius: 8px;
-    transition: opacity var(--hover) var(--ease-out), transform var(--hover) var(--ease-out);
+    transition: background-color var(--hover) var(--ease-out), transform var(--hover) var(--ease-out);
 }
 
 #nav-resume:hover {
-    opacity: 0.75;
+    background-color: var(--navy);
 }
 
 @media (max-width: 768px) {
