@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./CaseStudy.css";
 
@@ -97,8 +98,31 @@ function BlockView({ block }: { block: Block }) {
     );
 }
 
+/** The section being read: the last one whose heading has passed the top third of the screen. */
+function useCurrentSection(ids: string[]): string | null {
+    const [current, setCurrent] = useState<string | null>(ids[0] ?? null);
+    const key = ids.join(" ");
+    useEffect(() => {
+        const list = key.split(" ");
+        const onScroll = () => {
+            const line = window.innerHeight / 3;
+            let at = list[0];
+            for (const id of list) {
+                const el = document.getElementById(id);
+                if (el && el.getBoundingClientRect().top <= line) at = id;
+            }
+            setCurrent(at);
+        };
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [key]);
+    return current;
+}
+
 /** A project written up like a document: header, at a glance, contents, then numbered sections. */
 export default function CaseStudyView({ type, title, tech, study }: Props) {
+    const current = useCurrentSection(study.sections.map((s) => s.id));
     return (
         <article id="case-study">
             <div className="cs-container">
@@ -139,7 +163,7 @@ export default function CaseStudyView({ type, title, tech, study }: Props) {
                         <ol>
                             {study.sections.map((s, i) => (
                                 <li key={s.id}>
-                                    <a href={`#${s.id}`}>
+                                    <a href={`#${s.id}`} aria-current={current === s.id ? "location" : undefined}>
                                         <span className="cs-num">{num(i)}</span>
                                         {s.title}
                                     </a>

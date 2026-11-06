@@ -48,7 +48,7 @@
 .experience-chevron {
     flex-shrink: 0;
     color: black;
-    transition: transform 0.25s ease;
+    transition: transform var(--open) var(--ease-in-out);
 }
 
 .experience-chevron svg {
@@ -65,7 +65,7 @@
 .experience-body {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 0.25s ease;
+    transition: grid-template-rows var(--open) var(--ease-in-out);
 }
 
 .experience-body.open {

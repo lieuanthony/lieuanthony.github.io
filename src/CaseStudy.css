@@ -55,7 +55,7 @@
     background: black;
     border-radius: 8px;
     padding: 10px 18px;
-    transition: opacity 0.2s ease;
+    transition: opacity var(--hover) var(--ease-out), transform var(--hover) var(--ease-out);
 }
 
 .cs-button:hover {
@@ -140,12 +140,22 @@
     line-height: 1.35;
     color: rgba(0, 0, 0, 0.65);
     text-decoration: none;
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background var(--hover) var(--ease-out), color var(--hover) var(--ease-out);
 }
 
 .cs-toc a:hover {
     background: rgba(0, 0, 0, 0.05);
     color: black;
+}
+
+/* The section being read, in the site's navy. */
+.cs-toc a[aria-current="location"] {
+    background: rgba(0, 0, 128, 0.08);
+    color: rgb(0, 0, 128);
+}
+
+.cs-toc a[aria-current="location"] .cs-num {
+    color: rgba(0, 0, 128, 0.6);
 }
 
 .cs-num {

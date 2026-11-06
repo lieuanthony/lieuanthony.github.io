@@ -41,7 +41,7 @@
     color: white;
     text-decoration: none;
     font-size: 0.9rem;
-    transition: opacity 0.2s ease;
+    transition: opacity var(--hover) var(--ease-out);
 }
 
 #footer-email:hover {
@@ -58,7 +58,7 @@
     color: white;
     text-decoration: none;
     font-size: 0.9rem;
-    transition: opacity 0.2s ease;
+    transition: opacity var(--hover) var(--ease-out);
 }
 
 #footer-social a:hover {

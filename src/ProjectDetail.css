@@ -20,7 +20,7 @@
     text-decoration: none;
     color: black;
     border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
+    transition: border-color var(--hover) var(--ease-out);
 }
 
 .back-link:hover {
@@ -101,7 +101,7 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     padding: 10px 20px;
-    transition: background 0.2s ease;
+    transition: background var(--hover) var(--ease-out), transform var(--hover) var(--ease-out);
 }
 
 .detail-link:hover {

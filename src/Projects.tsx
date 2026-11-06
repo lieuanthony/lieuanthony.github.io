@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Projects.css";
 import type { CaseStudy } from "./CaseStudy";
 import { fluently } from "./caseStudies/fluently";
@@ -114,19 +114,13 @@ export const projects: Project[] = [
 ];
 
 export default function Projects() {
-    const navigate = useNavigate();
-
     return (
         <section id="projects">
             <h2 className="section-title">Projects</h2>
 
             <div className="projects-grid">
                 {projects.map((project) => (
-                    <div
-                        className="project-card"
-                        key={project.id}
-                        onClick={() => navigate(`/projects/${project.id}`)}
-                    >
+                    <Link className="project-card" key={project.id} to={`/projects/${project.id}`}>
                         <div className="card-image">
                             {project.media[0]?.src ? (
                                 <img
@@ -142,7 +136,7 @@ export default function Projects() {
                             <span className="card-subtitle">{project.type}</span>
                             <span className="card-title">{project.title}</span>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </section>
