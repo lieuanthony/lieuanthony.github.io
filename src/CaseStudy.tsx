@@ -127,7 +127,7 @@ export default function CaseStudyView({ type, title, tech, study }: Props) {
         <article id="case-study">
             <div className="cs-container">
                 <Link to="/#projects" className="back-link">
-                    &larr; Back to Work
+                    &larr; Back
                 </Link>
 
                 <header className="cs-head">
@@ -186,6 +186,12 @@ export default function CaseStudyView({ type, title, tech, study }: Props) {
                         ))}
                     </div>
                 </div>
+
+                <footer className="cs-end">
+                    <Link to="/#projects" className="back-link">
+                        &larr; Back
+                    </Link>
+                </footer>
             </div>
         </article>
     );

@@ -393,3 +393,9 @@
         border-radius: 12px;
     }
 }
+
+/* A way back once you reach the end, without scrolling up. */
+.cs-end {
+    padding-top: 32px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}

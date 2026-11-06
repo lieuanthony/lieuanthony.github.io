@@ -18,7 +18,7 @@ export default function ProjectDetail() {
                 <div className="detail-container">
 
                     <Link to="/#projects" className="back-link">
-                        &larr; Back to Work
+                        &larr; Back
                     </Link>
 
                     <p>Project not found.</p>
@@ -36,7 +36,7 @@ export default function ProjectDetail() {
             <div className="detail-container">
 
                 <Link to="/#projects" className="back-link">
-                    &larr; Back to Work
+                    &larr; Back
                 </Link>
 
                 <p className="project-type">{project.type}</p>
