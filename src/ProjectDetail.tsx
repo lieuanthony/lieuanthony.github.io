@@ -6,7 +6,7 @@ import CaseStudyView from "./CaseStudy";
 
 export default function ProjectDetail() {
     const { id } = useParams<{ id: string }>();
-    const project = projects.find((p) => p.id === id);
+    const project = projects.find((p) => p.id === id && !p.locked);
 
     useEffect(() => {
         window.scrollTo(0, 0);

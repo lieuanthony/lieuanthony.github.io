@@ -24,8 +24,9 @@
     border-color: rgba(0, 0, 128, 0.25);
 }
 
+/* Side by side, the screenshot fills the card's full height. */
 .card-image {
-    aspect-ratio: 16 / 10;
+    min-height: 320px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.04);
     border-right: 1px solid rgba(0, 0, 0, 0.08);
@@ -117,4 +118,93 @@
     .card-overview {
         font-size: 0.95rem;
     }
+}
+
+/* Private work: no page to open, so the card stays still and its links are locked. */
+.project-card.is-locked {
+    cursor: default;
+}
+
+.project-card.is-locked:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.card-image-locked {
+    position: relative;
+    display: grid;
+    place-items: center;
+    background:
+        repeating-linear-gradient(135deg, rgba(0, 0, 128, 0.04) 0 12px, transparent 12px 24px),
+        rgba(0, 0, 128, 0.05);
+}
+
+.locked-wordmark {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    color: rgba(0, 0, 128, 0.35);
+}
+
+.locked-badge {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+}
+
+.locked-badge .lock-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.lock-icon {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    vertical-align: -1px;
+}
+
+.card-locked {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.card-locked-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.locked-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    font-size: 0.92rem;
+    color: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.03);
+    cursor: not-allowed;
+}
+
+.card-locked-note {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.card-locked-note a {
+    color: var(--navy);
+    font-weight: bold;
+    text-underline-offset: 4px;
 }

@@ -23,6 +23,9 @@ export interface Project {
 
     /** A long-form write-up. When set, the project page shows it instead of the short layout. */
     caseStudy?: CaseStudy;
+
+    /** Private work: shown on the home page with its links locked, and no project page. */
+    locked?: boolean;
 }
 
 export const projects: Project[] = [
@@ -66,52 +69,62 @@ export const projects: Project[] = [
     },
 
     {
-        id: "intelligent-stock-market-news-analyzer",
-        title: "Intelligent Stock Market News Analyzer",
-        type: "Course Project",
+        id: "scoop-portal",
+        title: "SCOOP Portal",
+        type: "Co-op Project · RIT",
 
         overview:
-            "Cloud-based application that analyzes financial news sentiment using AWS Comprehend and stores results for real-time browsing through a React frontend.",
+            "The portal RIT's software engineering department uses to run its co-op program: projects, proposals, interest forms, and applicants in one place, with access set by role.",
 
-        tech: [
-            "Python",
-            "React",
-            "MySQL",
-            "AWS Lambda",
-            "API Gateway",
-            "Terraform",
-            "GitHub Actions",
-        ],
-
-        contributions: [
-            "Architected a serverless backend that decouples ingestion, sentiment processing, and data serving, keeping the dashboard responsive during heavy ingestion",
-            "Implemented real-time news ingestion and sentiment scoring for the Nasdaq-100, loading about 1,000 articles initially then processing roughly 10 per stock per minute",
-            "Designed interactive sentiment charts across hourly, daily, and weekly timeframes, with a companion price chart to compare sentiment shifts against price movement",
-            "Created email notifications that alert users whenever sentiment changes for a stock on their watchlist",
-            "Automated environment setup and teardown with Terraform to remove manual deployment steps",
-        ],
+        tech: [],
+        contributions: [],
 
         githubLink: null,
         liveLink: null,
+        media: [],
 
-        media: [
-            {
-                type: "image",
-                src: "/assets/images/news_analyzer_dashboard.png",
-                alt: "Sentiment Dashboard Mockup",
-                title: "Application Interface Mockup",
-                label: "News Sentiment Visualization",
-            },
-            {
-                type: "image",
-                src: "/assets/images/news_analyzer_aws.png",
-                alt: "AWS Architecture Diagram",
-                title: "System Architecture & Design",
-                label: "High Level Data Flow Architecture Diagram",
-            },
-        ],
+        locked: true,
     },
 ];
+
+function LockIcon() {
+    return (
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" className="lock-icon">
+            <rect x="5" y="11" width="14" height="10" rx="2" />
+            <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+        </svg>
+    );
+}
+
+function ProjectInfo({ project }: { project: Project }) {
+    return (
+        <div className="card-info">
+            <span className="card-subtitle">{project.type}</span>
+            <span className="card-title">{project.title}</span>
+            <p className="card-overview">{project.overview}</p>
+            {project.locked ? (
+                <div className="card-locked">
+                    <div className="card-locked-buttons">
+                        <span className="locked-button" aria-disabled="true">
+                            Demo <LockIcon />
+                        </span>
+                        <span className="locked-button" aria-disabled="true">
+                            Case Study <LockIcon />
+                        </span>
+                    </div>
+                    <p className="card-locked-note">
+                        Private to RIT.{" "}
+                        <a href="mailto:anthonyjunlieu@gmail.com?subject=SCOOP%20Portal">Ask me about it</a>
+                    </p>
+                </div>
+            ) : (
+                <span className="card-more">
+                    {project.caseStudy ? "Read the case study" : "View project"} <span aria-hidden="true">→</span>
+                </span>
+            )}
+        </div>
+    );
+}
 
 export default function Projects() {
     return (
@@ -122,26 +135,30 @@ export default function Projects() {
             </header>
 
             <div className="projects-list">
-                {projects.map((project) => (
-                    <Link className="project-card" key={project.id} to={`/projects/${project.id}`}>
-                        <div className="card-image">
-                            {project.media[0]?.src ? (
-                                <img src={project.media[0].src} alt={project.media[0].alt} />
-                            ) : (
-                                <div className="card-image-placeholder" />
-                            )}
-                        </div>
-
-                        <div className="card-info">
-                            <span className="card-subtitle">{project.type}</span>
-                            <span className="card-title">{project.title}</span>
-                            <p className="card-overview">{project.overview}</p>
-                            <span className="card-more">
-                                {project.caseStudy ? "Read the case study" : "View project"} <span aria-hidden="true">→</span>
-                            </span>
-                        </div>
-                    </Link>
-                ))}
+                {projects.map((project) =>
+                    project.locked ? (
+                        <article className="project-card is-locked" key={project.id}>
+                            <div className="card-image card-image-locked">
+                                <span className="locked-wordmark">{project.title.split(" ")[0]}</span>
+                                <span className="locked-badge">
+                                    <LockIcon />
+                                </span>
+                            </div>
+                            <ProjectInfo project={project} />
+                        </article>
+                    ) : (
+                        <Link className="project-card" key={project.id} to={`/projects/${project.id}`}>
+                            <div className="card-image">
+                                {project.media[0]?.src ? (
+                                    <img src={project.media[0].src} alt={project.media[0].alt} />
+                                ) : (
+                                    <div className="card-image-placeholder" />
+                                )}
+                            </div>
+                            <ProjectInfo project={project} />
+                        </Link>
+                    )
+                )}
             </div>
         </section>
     );

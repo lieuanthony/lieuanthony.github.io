@@ -25,10 +25,10 @@ const experiences: Experience[] = [
         id: "rit",
         company: "RIT Department of Software Engineering",
         role: "Software Engineer Co-op",
-        focus: "Full stack engineering",
+        focus: "Full stack engineering · SCOOP team",
         period: "January 2026 — May 2026",
         summary:
-            "I built features for the department's co-op program tool across the whole stack, from the database and API to the dashboard coordinators use every day.",
+            "I built features for SCOOP, the department's co-op program portal, across the whole stack, from the database and API to the dashboard coordinators use every day.",
     },
     {
         id: "excellus",
