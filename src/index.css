@@ -1,5 +1,5 @@
 /*
- * Motion and interaction, borrowed from Fluently: smooth, no bounce. Ease out for things
+ * Motion and interaction, borrowed from Floont: smooth, no bounce. Ease out for things
  * arriving, ease in and out for things that open and close.
  */
 :root {

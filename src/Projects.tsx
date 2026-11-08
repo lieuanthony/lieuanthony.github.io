@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Projects.css";
 import type { CaseStudy } from "./CaseStudy";
-import { fluently } from "./caseStudies/fluently";
+import { floont } from "./caseStudies/floont";
 
 export interface Project {
     id: string;
@@ -30,29 +30,29 @@ export interface Project {
 
 export const projects: Project[] = [
     {
-        id: "fluently",
-        title: "Fluently",
+        id: "floont",
+        title: "Floont",
         type: "Personal Project",
 
         overview:
-            "Free speaking-practice web app that marks filler words, mid-phrase pauses, and repeats in your answers, with speech transcribed privately in the browser.",
+            "Speaking-practice web app that marks filler words, mid-phrase pauses, and repeats in your answers, with speech transcribed privately in the browser.",
 
-        tech: ["TypeScript", "React", "Whisper", "Supabase", "Gemini", "Vercel"],
+        tech: ["TypeScript", "React", "Whisper", "Supabase", "Gemini", "Stripe", "Vercel"],
 
         contributions: [],
 
         githubLink: null,
-        liveLink: "https://fluently-one-ruby.vercel.app",
+        liveLink: "https://floont.com",
 
         media: [
             {
                 type: "image",
-                src: "/assets/images/fluently_landing.png",
-                alt: "Fluently landing page",
+                src: "/assets/images/floont_landing.png",
+                alt: "Floont landing page",
             },
         ],
 
-        caseStudy: fluently,
+        caseStudy: floont,
     },
 
     {

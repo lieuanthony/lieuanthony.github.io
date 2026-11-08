@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import { projects } from "./Projects";
 import "./ProjectDetail.css";
 import CaseStudyView from "./CaseStudy";
@@ -11,6 +11,9 @@ export default function ProjectDetail() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    // Floont was first published here as Fluently: keep old links working.
+    if (id === "fluently") return <Navigate to="/projects/floont" replace />;
 
     if (!project) {
         return (
