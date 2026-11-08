@@ -1,17 +1,17 @@
 import type { CaseStudy } from "../CaseStudy";
 
-/** Fluently: a speaking-practice web app. Written as a case study; facts match the shipped app. */
-export const fluently: CaseStudy = {
+/** Floont (first shipped as Fluently): a speaking-practice web app. Written as a case study; facts match the shipped app. */
+export const floont: CaseStudy = {
     lead:
-        "A free web app that helps people speak without filler words. You answer a question out loud, and it shows every \"um\", every pause in the middle of a sentence, and every phrase you repeat, then scores the answer. Speech is turned into text inside your browser, so your audio stays on your own device unless you choose to save it.",
+        "A web app that helps people speak without filler words. You answer a question out loud, and it shows every \"um\", every pause in the middle of a sentence, and every phrase you repeat, then scores the answer. Speech is turned into text inside your browser, so your audio stays on your own device unless you choose to save it.",
 
-    liveLink: "https://fluently-one-ruby.vercel.app",
+    liveLink: "https://floont.com",
     codeNote: "The GitHub repository is private.",
 
     glance: [
         { term: "Role", text: "Solo" },
         { term: "Status", text: "Live, in active development" },
-        { term: "Cost to run", text: "$0" },
+        { term: "Pricing", text: "Free, or $5 a month for Plus" },
     ],
 
     sections: [
@@ -23,13 +23,16 @@ export const fluently: CaseStudy = {
                     p: "Fillers like \"um\", \"like\", and \"you know\" make a speaker sound less sure of themselves, and they are hard to notice in your own speech. The usual fix is to record yourself and listen back. That takes time, and most people never do it.",
                 },
                 {
-                    p: "Fluently makes that loop take seconds. Pick a question, press Start talking, and answer. When you stop, you see your answer as a transcript and on a timeline, with each mistake marked and a score out of 100. You can play back the exact moment of any mistake, then try the same question again or move on to the next one.",
+                    p: "Floont makes that loop take seconds. Pick a question, press Start talking, and answer. When you stop, you see your answer as a transcript and on a timeline, with each mistake marked and a score out of 100. You can play back the exact moment of any mistake, then try the same question again or move on to the next one.",
+                },
+                {
+                    p: "It started as a personal project called Fluently. As it grew into a real product, I renamed it, moved it to its own domain, and added accounts, billing, and email.",
                 },
                 {
                     figure: {
-                        src: "/assets/images/fluently_landing.png",
-                        alt: "Fluently landing page with the headline Speak with confidence and a sample answer with fillers, a pause, and a repeat marked",
-                        caption: "The landing page. The sample answer on the right marks each kind of mistake Fluently checks for.",
+                        src: "/assets/images/floont_landing.png",
+                        alt: "Floont landing page with the headline Speak with confidence and a sample answer with fillers, a pause, and a repeat marked",
+                        caption: "The landing page. The sample answer on the right marks each kind of mistake Floont checks for.",
                     },
                 },
             ],
@@ -43,7 +46,7 @@ export const fluently: CaseStudy = {
                     list: [
                         { term: "Instant feedback.", text: "Results within seconds of finishing an answer, with the mistakes marked on what you said." },
                         { term: "Private by default.", text: "Practice recordings are personal. Audio should not leave the device unless the user asks for that." },
-                        { term: "Free to use and free to run.", text: "No subscription, and no paid speech or AI services behind the scenes." },
+                        { term: "Useful for free, cheap to run.", text: "The core checks had to work for everyone without a subscription, and without paid speech or AI services behind them." },
                         { term: "Fair judgment.", text: "\"Like\" is a filler in \"it was, like, fine\" but not in \"I like pizza\". A tool that flags both gets ignored quickly." },
                     ],
                 },
@@ -59,18 +62,19 @@ export const fluently: CaseStudy = {
                 {
                     list: [
                         { term: "Three checks.", text: "Filler words; pace, which separates pauses between thoughts (good) from pauses in the middle of a phrase (a mistake); and redundancy, which catches repeated hedges like \"I think\", crutch words like \"basically\", and phrases that say the same thing twice." },
-                        { term: "Questions picked for you.", text: "Behavioral, technical, meeting, presentation, casual, and storytelling questions. The bank covers 12 fields. Your role or job title picks your field, and some questions are worded for it, for example \"Why do you want to work as an ICU nurse?\"" },
+                        { term: "719 questions, picked for you.", text: "Behavioral, technical, meeting, presentation, casual, and storytelling questions across 19 fields, from software engineering and information systems to law and healthcare. Your role picks your field, and some questions are worded for it, for example \"Why do you want to work as an ICU nurse?\"" },
+                        { term: "Fitted to your career level.", text: "Early-career, mid-level, senior, and manager questions go only to people at that level. Software engineers also get system design, concepts like object-oriented programming, and coding problems to talk through." },
+                        { term: "Your own questions.", text: "Add questions you want to practice, or paste a job description to get suggestions from it." },
                         { term: "Learns your habits.", text: "Questions you answer come up more, and ones you skip come up less. Names you correct in a transcript are fed back to the speech engine so it spells them right next time." },
-                        { term: "Drills and mock interviews.", text: "A filler-free streak that ends at your first filler, reading a passage with marked pauses, a think-first drill, and a five-question mock interview with one combined score." },
-                        { term: "A reason to come back.", text: "A daily path of short steps, streaks, points, daily quests, and weekly leaderboards." },
+                        { term: "13 drills and mock interviews.", text: "A filler-free streak that ends at your first filler, reading a passage with marked pauses, STAR stories, 45-second elevator pitches, tough questions with three seconds to prepare, and a five-question mock interview whose last question follows your career level." },
                         { term: "Community exercises.", text: "Users can publish their own question sets for others to practice, with reporting and automatic hiding of reported sets." },
                     ],
                 },
                 {
                     figure: {
-                        src: "/assets/images/fluently_practice.png",
-                        alt: "Practice page showing a behavioral question, focus toggles for fillers, pace, and redundancy, and a Start talking button",
-                        caption: "Practice. Choose a kind of question and the checks you want scored, then answer out loud. Previous and Next move between questions.",
+                        src: "/assets/images/floont_practice.png",
+                        alt: "Practice page showing a question, a question type menu, focus toggles for fillers, pace, and redundancy, and a Start talking button",
+                        caption: "Practice. Choose a kind of question and the checks you want scored, then answer out loud.",
                     },
                 },
             ],
@@ -92,9 +96,9 @@ export const fluently: CaseStudy = {
                 },
                 {
                     figure: {
-                        src: "/assets/images/fluently_results.png",
+                        src: "/assets/images/floont_results.png",
                         alt: "Results page with a score of 70 out of 100, a list of deductions, a timeline of marks, and the transcript with fillers highlighted",
-                        caption: "Results for one answer: the score and deductions, the timeline, and the transcript with fillers marked. A dashed outline means Fluently is not sure.",
+                        caption: "Results for a sample answer: the score and deductions, the timeline, and the transcript with fillers marked. A dashed outline means Floont is not sure.",
                     },
                 },
             ],
@@ -115,8 +119,9 @@ export const fluently: CaseStudy = {
                 {
                     list: [
                         { term: "Frontend.", text: "React 19, TypeScript, and Vite, hosted on Vercel." },
-                        { term: "Backend.", text: "Supabase: Postgres, auth (email and Google), file storage for opt-in recordings, and Deno Edge Functions for account deletion and the optional AI check." },
+                        { term: "Backend.", text: "Supabase: Postgres, auth (email and Google), file storage for opt-in recordings, scheduled jobs, and Deno Edge Functions for the AI check, billing, reminder emails, and account deletion." },
                         { term: "Speech.", text: "Whisper base.en through transformers.js, with a prompt that keeps fillers in the transcript; by default Whisper tends to clean them out." },
+                        { term: "Payments and email.", text: "Stripe for subscriptions and Resend for email, with their secret keys kept only on the server." },
                     ],
                 },
             ],
@@ -131,6 +136,7 @@ export const fluently: CaseStudy = {
                         { term: "Audio stays local.", text: "Recordings are uploaded only if the user turns on saving recordings, which is off by default. They go to a private storage bucket, one folder per user, and can all be deleted from Settings." },
                         { term: "Row Level Security on every table and bucket.", text: "A SQL test signs in as two users and checks that neither can read or change the other's data. It is extended whenever a table is added." },
                         { term: "Strict Content Security Policy.", text: "No inline scripts or styles. Transcripts are rendered as plain text, never as HTML, so nothing a user says can inject markup." },
+                        { term: "Adults only.", text: "Each account answers a one-time age and country check. Only whether the person is 18 or older is stored, never the birth date." },
                         { term: "Abuse limits.", text: "Sign-up is protected by Cloudflare Turnstile, and AI requests are rate-limited per user in the database." },
                         { term: "Plain-language policies.", text: "I wrote the Privacy Policy and Terms of Use to match exactly what the code does, with a summary at the top of each." },
                     ],
@@ -142,7 +148,7 @@ export const fluently: CaseStudy = {
             title: "Optional AI feedback",
             blocks: [
                 {
-                    p: "Rules can tell how you spoke, but not whether what you said was any good. So I added an optional second opinion from Google's Gemini, on its free tier. It is off by default. When it is on, only the transcript and the question are sent, never the audio.",
+                    p: "Rules can tell how you spoke, but not whether what you said was any good. So I added an optional second opinion from Google's Gemini. It is off by default. When it is on, only the transcript and the question are sent, never the audio.",
                 },
                 {
                     list: [
@@ -154,10 +160,26 @@ export const fluently: CaseStudy = {
                 },
                 {
                     figure: {
-                        src: "/assets/images/fluently_content.png",
+                        src: "/assets/images/floont_content.png",
                         alt: "Content tab with a one-line summary, verdicts for on topic, structure, specific, and complete, what worked, what to fix, and an outline of a stronger answer",
-                        caption: "The Content tab, shown only when Gemini is turned on: a verdict for each criterion, what worked, what to fix, and an outline of a stronger answer.",
+                        caption: "The Content tab for a sample answer: a verdict for each criterion, what worked, what to fix, and an outline of a stronger answer.",
                     },
+                },
+            ],
+        },
+        {
+            id: "product",
+            title: "Turning it into a product",
+            blocks: [
+                {
+                    p: "The checks that run in the browser cost nothing per user, so they stay free. Gemini is the one feature with a real per-use limit, which made it the natural line between the free plan and a paid one.",
+                },
+                {
+                    list: [
+                        { term: "Floont Plus.", text: "Free accounts get three Gemini-checked answers a day; Plus is $5 a month with no daily cap beyond fair use. Stripe Checkout takes the payment, a webhook keeps each subscription in step, and the plan is only ever checked on the server." },
+                        { term: "Creator referrals.", text: "Creators get a link, code, and QR code that give their audience a 7-day trial. An admin page shows sign-ups and conversions per creator as counts only, never who signed up." },
+                        { term: "Reminder emails.", text: "An hourly job can email someone when a streak of three days or more is about to end, or when their weekly goal is slipping. They are opt-in and off by default, sent in the user's own evening, with a one-click unsubscribe." },
+                    ],
                 },
             ],
         },
@@ -170,16 +192,23 @@ export const fluently: CaseStudy = {
                 },
                 {
                     figure: {
-                        src: "/assets/images/fluently_home.png",
-                        alt: "Home page with a daily path of five steps, a streak and points card, a leaderboard, daily quests, the week's progress, and an activity heatmap",
-                        caption: "Home: today's path on the left, and the streak, points, leaderboard, quests, and activity on the right.",
+                        src: "/assets/images/floont_home.png",
+                        alt: "Home page with a daily path of five steps, a streak and points card, a leaderboard, daily quests, and the week's progress",
+                        caption: "Home, with sample data: today's path on the left, and the streak, points, leaderboard, quests, and activity on the right.",
                     },
                 },
                 {
                     figure: {
-                        src: "/assets/images/fluently_exercises.png",
-                        alt: "Exercises page listing drills such as Filler-free streak, Read with pause marks, and Think first, then speak",
-                        caption: "Drills that target one habit at a time, plus a Community tab for exercises other users publish.",
+                        src: "/assets/images/floont_history.png",
+                        alt: "History page with filters on the left, totals, a line chart of score rising over twelve answers, and a list of past answers",
+                        caption: "History, with sample data: score over time, with past answers to search, filter, and reopen.",
+                    },
+                },
+                {
+                    figure: {
+                        src: "/assets/images/floont_exercises.png",
+                        alt: "Exercises page with search, focus, progress, and sort controls above sideways rows of drills grouped by fillers and pace",
+                        caption: "Drills that target one habit at a time, in sideways rows by skill, plus a Community tab for exercises other users publish.",
                     },
                 },
             ],
@@ -190,10 +219,11 @@ export const fluently: CaseStudy = {
             blocks: [
                 {
                     list: [
-                        { term: "Telling a filler from a real word.", text: "\"Like\", \"so\", and \"just\" are fillers only some of the time. The analyzer marks a word as certain only when the grammar settles it; otherwise it marks it as possible and the speaker decides. Those decisions are remembered, and after two of the same call Fluently makes it for them." },
+                        { term: "Telling a filler from a real word.", text: "\"Like\", \"so\", and \"just\" are fillers only some of the time. The analyzer marks a word as certain only when the grammar settles it; otherwise it marks it as possible and the speaker decides. Those decisions are remembered, and after two of the same call Floont makes it for them." },
                         { term: "A large model in a browser tab.", text: "Running Whisper on the device meant a one-time 80 MB download, a Web Worker to keep the page responsive, and a progress bar so the first wait is clear." },
                         { term: "Browser quirks.", text: "Chrome saves recordings without a duration, which breaks seeking in the audio player. The player works around it by seeking past the end once so the browser computes the duration, then jumping back." },
                         { term: "AI on a free tier.", text: "Early on, Gemini requests timed out. I split delivery and content into separate requests, capped output length, limited the model's reasoning effort, and moved the content check to the background so results show right away." },
+                        { term: "Counting a free allowance fairly.", text: "Splitting those requests meant one answer made two calls, and limiting them separately let a free account get a fourth answer checked. The limit now counts each transcript once per day, using a hash and a database lock so simultaneous requests can't slip past it." },
                     ],
                 },
             ],
@@ -206,7 +236,7 @@ export const fluently: CaseStudy = {
                     list: [
                         { term: "Small pull requests.", text: "Every change goes through a feature branch and a pull request. GitHub Actions run tests, linting, and a production build, and Vercel builds a preview of each one." },
                         { term: "Real transcripts as tests.", text: "When the analyzer gets a real recording wrong, that exact transcript becomes a regression test before the rule is fixed." },
-                        { term: "Pure logic, tested.", text: "Scoring, question picking, pause classification, and filler rules are pure functions with unit tests, separate from the UI." },
+                        { term: "Pure logic, tested.", text: "Scoring, question picking, pause classification, and filler rules are pure functions, separate from the UI, covered by nearly 500 unit tests." },
                         { term: "Notes alongside the code.", text: "Decisions, module notes, and status are kept in a linked notes vault, so the reasons behind a choice are written down." },
                     ],
                 },
@@ -218,9 +248,9 @@ export const fluently: CaseStudy = {
             blocks: [
                 {
                     list: [
-                        "A custom domain.",
-                        "More fields and questions, shaped by what users skip and answer.",
-                        "Progress over time: how fillers per minute and mid-phrase pauses change across weeks.",
+                        "Offering Gemini in the EEA, Switzerland, and the UK, which its free tier doesn't allow.",
+                        "More questions, shaped by what users skip and answer.",
+                        "More drills, such as spotting your own fillers and clean transitions between points.",
                     ],
                 },
             ],
