@@ -37,7 +37,7 @@ export const projects: Project[] = [
         overview:
             "Speaking-practice web app that marks filler words, mid-phrase pauses, and repeats in your answers, with speech transcribed privately in the browser.",
 
-        tech: ["TypeScript", "React", "Whisper", "Supabase", "Gemini", "Stripe", "Vercel"],
+        tech: ["TypeScript", "React", "Whisper", "Supabase", "Gemini", "Stripe", "Cloudflare"],
 
         contributions: [],
 

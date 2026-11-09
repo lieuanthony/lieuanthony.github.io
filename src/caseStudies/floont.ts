@@ -11,7 +11,7 @@ export const floont: CaseStudy = {
     glance: [
         { term: "Role", text: "Solo" },
         { term: "Status", text: "Live, in active development" },
-        { term: "Pricing", text: "Free, or $5 a month for Plus" },
+        { term: "Pricing", text: "Free, or $5 or $10 a month" },
     ],
 
     sections: [
@@ -112,14 +112,14 @@ export const floont: CaseStudy = {
                 {
                     steps: [
                         { term: "Record.", text: "The browser records the answer with the MediaRecorder API." },
-                        { term: "Transcribe.", text: "OpenAI's Whisper model (base.en) runs on the device through transformers.js, in a Web Worker so the page stays responsive. The model downloads once (about 80 MB) and is cached. It returns each word with a start and end time." },
+                        { term: "Transcribe.", text: "OpenAI's Whisper model (base.en) runs on the device through transformers.js, in a Web Worker so the page stays responsive. The model downloads once and is cached: about 80 MB on phones, and up to 290 MB where the graphics card runs it. It returns each word with a start and end time." },
                         { term: "Analyze.", text: "Rule-based analyzers in TypeScript read those words. Fillers are judged with part-of-speech tags from the compromise library, so the verb \"like\" is not flagged. Pace is judged from the gaps between word timestamps. Redundancy is judged from repeated phrases over a time window." },
                         { term: "Score and save.", text: "The score is computed on the device. If the user is signed in, the transcript and results are saved to their account." },
                     ],
                 },
                 {
                     list: [
-                        { term: "Frontend.", text: "React 19, TypeScript, and Vite, hosted on Vercel." },
+                        { term: "Frontend.", text: "React 19, TypeScript, and Vite, hosted on Cloudflare Pages." },
                         { term: "Backend.", text: "Supabase: Postgres, auth (email and Google), file storage for opt-in recordings, scheduled jobs, and Deno Edge Functions for the AI check, billing, reminder emails, and account deletion." },
                         { term: "Speech.", text: "Whisper base.en through transformers.js, with a prompt that keeps fillers in the transcript; by default Whisper tends to clean them out." },
                         { term: "Payments and email.", text: "Stripe for subscriptions and Resend for email, with their secret keys kept only on the server." },
@@ -153,10 +153,10 @@ export const floont: CaseStudy = {
                 },
                 {
                     list: [
-                        { term: "Sharper delivery checks.", text: "Gemini reads for meaning, so it makes better filler calls and catches talking in circles: saying the same idea again without adding anything." },
                         { term: "Content feedback.", text: "Whether the answer fits the question, is correct, is well structured, specific, and complete, with what worked, what to fix, and an outline of a stronger answer. It names the subject itself: on a coding question, the data structure, edge cases, and time and space complexity." },
-                        { term: "Never trusted blindly.", text: "Every word span Gemini returns is checked in the browser against the real transcript before it is shown. Content feedback never changes the score." },
-                        { term: "Always a fallback.", text: "If Gemini is slow, rate-limited, or down, the delivery checks fall back to the browser's rules with no error shown, and content feedback can be tried again." },
+                        { term: "Talking in circles.", text: "Gemini reads for meaning, so the same request also finds where a speaker says an idea again without adding anything. These are listed with the other repeats but cost no points." },
+                        { term: "Never trusted blindly.", text: "Every quote Gemini returns is matched against the real transcript in the browser before it is shown, and nothing Gemini says changes the score." },
+                        { term: "Built to fail plainly.", text: "Fillers, pace, and repeats are always judged by the browser's rules, so results never wait on Gemini. If the main model is busy or rate-limited, a second model takes over. After three tries on one answer, the app says Gemini is unavailable instead of spending more of the quota." },
                     ],
                 },
                 {
@@ -177,7 +177,7 @@ export const floont: CaseStudy = {
                 },
                 {
                     list: [
-                        { term: "Floont Plus.", text: "Free accounts get three Gemini-checked answers a day; Plus is $5 a month with no daily cap beyond fair use. Stripe Checkout takes the payment, a webhook keeps each subscription in step, and the plan is only ever checked on the server." },
+                        { term: "Three plans.", text: "Free accounts get three Gemini-checked answers a day, Plus gets 25 for $5 a month, and Pro gets 50 for $10. Stripe Checkout takes the payment, a webhook keeps each subscription in step, and the plan is only ever checked on the server." },
                         { term: "Creator referrals.", text: "Creators get a link, code, and QR code that give their audience a 3-day trial. An admin page shows sign-ups and conversions per creator as counts only, never who signed up." },
                         { term: "Reminder emails.", text: "An hourly job can email someone when a streak of three days or more is about to end, or when their weekly goal is slipping. They are opt-in and off by default, sent in the user's own evening, with a one-click unsubscribe." },
                     ],
@@ -221,11 +221,11 @@ export const floont: CaseStudy = {
                 {
                     list: [
                         { term: "Telling a filler from a real word.", text: "\"Like\", \"so\", and \"just\" are fillers only some of the time. The analyzer marks a word as certain only when the grammar settles it; otherwise it marks it as possible and the speaker decides. Those decisions are remembered, and after two of the same call Floont makes it for them." },
-                        { term: "A large model in a browser tab.", text: "Running Whisper on the device meant a one-time 80 MB download, a Web Worker to keep the page responsive, and a progress bar so the first wait is clear." },
+                        { term: "A large model in a browser tab.", text: "Running Whisper on the device meant a one-time download of up to 290 MB, a Web Worker to keep the page responsive, and a progress bar that follows the real bytes so the first wait is clear." },
                         { term: "Browser quirks.", text: "Chrome saves recordings without a duration, which breaks seeking in the audio player. The player works around it by seeking past the end once so the browser computes the duration, then jumping back." },
-                        { term: "AI on a free tier.", text: "Early on, Gemini requests timed out. I split delivery and content into separate requests, capped output length, limited the model's reasoning effort, and moved the content check to the background so results show right away." },
-                        { term: "A model that gets stuck.", text: "Newer Gemini models sometimes repeat themselves until they hit the output limit, which loses the whole reply. Changing the prompt and the reply format didn't stop it, so a cut-off reply is retried on a second model, and which model goes first is a setting rather than code." },
-                        { term: "Counting a free allowance fairly.", text: "Splitting those requests meant one answer made two calls, and limiting them separately let a free account get a fourth answer checked. The limit now counts each transcript once per day, using a hash and a database lock so simultaneous requests can't slip past it." },
+                        { term: "AI on a free tier.", text: "Free-tier requests are limited per day, and failed ones still count. I cut each answer to one request by leaving delivery to the browser's rules and folding talking in circles into the content check, waited longer before giving up on a slow reply, and capped each answer at three tries." },
+                        { term: "Counting an allowance fairly.", text: "The daily limit counts each transcript once, using a hash and a database lock, so retrying an answer doesn't use up another one and simultaneous requests can't slip past it." },
+                        { term: "Moving hosts to take payments.", text: "Vercel's free plan doesn't allow a site that takes payments, so I moved to Cloudflare Pages. Its 25 MiB limit per file ruled out a 25.6 MiB speech engine file, which turned out to be an unused copy, so the build now drops it." },
                     ],
                 },
             ],
@@ -236,9 +236,9 @@ export const floont: CaseStudy = {
             blocks: [
                 {
                     list: [
-                        { term: "Small pull requests.", text: "Every change goes through a feature branch and a pull request. GitHub Actions run tests, linting, and a production build, and Vercel builds a preview of each one." },
+                        { term: "Small pull requests.", text: "Every change goes through a feature branch and a pull request. GitHub Actions run tests, linting, and a production build, and Cloudflare Pages builds a preview of each one." },
                         { term: "Real transcripts as tests.", text: "When the analyzer gets a real recording wrong, that exact transcript becomes a regression test before the rule is fixed." },
-                        { term: "Pure logic, tested.", text: "Scoring, question picking, pause classification, and filler rules are pure functions, separate from the UI, covered by nearly 600 unit tests." },
+                        { term: "Pure logic, tested.", text: "Scoring, question picking, pause classification, and filler rules are pure functions, separate from the UI, covered by more than 600 unit tests." },
                         { term: "Notes alongside the code.", text: "Decisions, module notes, and status are kept in a linked notes vault, so the reasons behind a choice are written down." },
                     ],
                 },
