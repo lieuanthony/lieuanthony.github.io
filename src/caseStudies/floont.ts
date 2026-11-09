@@ -31,7 +31,7 @@ export const floont: CaseStudy = {
                 {
                     figure: {
                         src: "/assets/images/floont_landing.png",
-                        alt: "Floont landing page with the headline Speak with confidence and a sample answer with fillers, a pause, and a repeat marked",
+                        alt: "Floont landing page with the headline Speak with confidence and, beside Floo the Raccoon, a sample answer with fillers, a pause, and a repeat marked",
                         caption: "The landing page. The sample answer on the right marks each kind of mistake Floont checks for.",
                     },
                 },
@@ -62,10 +62,10 @@ export const floont: CaseStudy = {
                 {
                     list: [
                         { term: "Three checks.", text: "Filler words; pace, which separates pauses between thoughts (good) from pauses in the middle of a phrase (a mistake); and redundancy, which catches repeated hedges like \"I think\", crutch words like \"basically\", and phrases that say the same thing twice." },
-                        { term: "719 questions, picked for you.", text: "Behavioral, technical, meeting, presentation, casual, and storytelling questions across 19 fields, from software engineering and information systems to law and healthcare. Your role picks your field, and some questions are worded for it, for example \"Why do you want to work as an ICU nurse?\"" },
+                        { term: "1,100 questions, picked for you.", text: "Behavioral, technical, meeting, presentation, casual, and storytelling questions across 19 fields, from software engineering and information systems to law and healthcare. Every field has practice beyond interviews. Your role picks your field, and some questions are worded for it, for example \"Why do you want to work as an ICU nurse?\"" },
                         { term: "Fitted to your career level.", text: "Early-career, mid-level, senior, and manager questions go only to people at that level. Software engineers also get system design, concepts like object-oriented programming, and coding problems to talk through." },
                         { term: "Your own questions.", text: "Add questions you want to practice, or paste a job description to get suggestions from it." },
-                        { term: "Learns your habits.", text: "Questions you answer come up more, and ones you skip come up less. Names you correct in a transcript are fed back to the speech engine so it spells them right next time." },
+                        { term: "Learns your habits.", text: "Questions you answer come up more, and ones you skip come up less. A question that would get much the same answer as the last one is held back. Names you correct in a transcript are fed back to the speech engine so it spells them right next time." },
                         { term: "13 drills and mock interviews.", text: "A filler-free streak that ends at your first filler, reading a passage with marked pauses, STAR stories, 45-second elevator pitches, tough questions with three seconds to prepare, and a five-question mock interview whose last question follows your career level." },
                         { term: "Community exercises.", text: "Users can publish their own question sets for others to practice, with reporting and automatic hiding of reported sets." },
                     ],
@@ -73,7 +73,7 @@ export const floont: CaseStudy = {
                 {
                     figure: {
                         src: "/assets/images/floont_practice.png",
-                        alt: "Practice page showing a question, a question type menu, focus toggles for fillers, pace, and redundancy, and a Start talking button",
+                        alt: "Practice page showing a question, a question type menu, focus toggles for fillers, pace, and redundancy, Floo the Raccoon, and a Start talking button",
                         caption: "Practice. Choose a kind of question and the checks you want scored, then answer out loud.",
                     },
                 },
@@ -89,6 +89,7 @@ export const floont: CaseStudy = {
                 {
                     list: [
                         { term: "Score.", text: "Every answer starts at 100, and each mistake costs 5 points. The list under the score shows each deduction and when it happened." },
+                        { term: "What to try next.", text: "One line under the score names the thing to work on first, worked out on the device from that answer alone, such as which filler made up most of the slips." },
                         { term: "Timeline.", text: "The whole answer as one strip, with each filler, pause, and repeat marked where it happened. It is also the audio player: click a mark to hear that moment, or drag along the strip to scrub." },
                         { term: "Transcript.", text: "Each tab marks its own kind of mistake in the text. Words the analyzer is unsure about get a dashed outline, and you decide whether they count." },
                         { term: "Fix it yourself.", text: "If the speech engine misheard a word, you can edit the transcript and the score updates." },
@@ -97,8 +98,8 @@ export const floont: CaseStudy = {
                 {
                     figure: {
                         src: "/assets/images/floont_results.png",
-                        alt: "Results page with a score of 70 out of 100, a list of deductions, a timeline of marks, and the transcript with fillers highlighted",
-                        caption: "Results for a sample answer: the score and deductions, the timeline, and the transcript with fillers marked. A dashed outline means Floont is not sure.",
+                        alt: "Results page with a score of 70 out of 100, a list of deductions, a tip for next time, a timeline of marks, and the transcript with fillers highlighted",
+                        caption: "Results for a sample answer: the score and deductions, what to try next, the timeline, and the transcript with fillers marked. A dashed outline means Floont is not sure.",
                     },
                 },
             ],
@@ -153,9 +154,9 @@ export const floont: CaseStudy = {
                 {
                     list: [
                         { term: "Sharper delivery checks.", text: "Gemini reads for meaning, so it makes better filler calls and catches talking in circles: saying the same idea again without adding anything." },
-                        { term: "Content feedback.", text: "Whether the answer fits the question, is correct, is well structured, specific, and complete, with what worked, what to fix, and an outline of a stronger answer." },
+                        { term: "Content feedback.", text: "Whether the answer fits the question, is correct, is well structured, specific, and complete, with what worked, what to fix, and an outline of a stronger answer. It names the subject itself: on a coding question, the data structure, edge cases, and time and space complexity." },
                         { term: "Never trusted blindly.", text: "Every word span Gemini returns is checked in the browser against the real transcript before it is shown. Content feedback never changes the score." },
-                        { term: "Always a fallback.", text: "If Gemini is slow, rate-limited, or down, the answer is checked by the browser's rules as before, with no error shown." },
+                        { term: "Always a fallback.", text: "If Gemini is slow, rate-limited, or down, the delivery checks fall back to the browser's rules with no error shown, and content feedback can be tried again." },
                     ],
                 },
                 {
@@ -177,7 +178,7 @@ export const floont: CaseStudy = {
                 {
                     list: [
                         { term: "Floont Plus.", text: "Free accounts get three Gemini-checked answers a day; Plus is $5 a month with no daily cap beyond fair use. Stripe Checkout takes the payment, a webhook keeps each subscription in step, and the plan is only ever checked on the server." },
-                        { term: "Creator referrals.", text: "Creators get a link, code, and QR code that give their audience a 7-day trial. An admin page shows sign-ups and conversions per creator as counts only, never who signed up." },
+                        { term: "Creator referrals.", text: "Creators get a link, code, and QR code that give their audience a 3-day trial. An admin page shows sign-ups and conversions per creator as counts only, never who signed up." },
                         { term: "Reminder emails.", text: "An hourly job can email someone when a streak of three days or more is about to end, or when their weekly goal is slipping. They are opt-in and off by default, sent in the user's own evening, with a one-click unsubscribe." },
                     ],
                 },
@@ -188,12 +189,12 @@ export const floont: CaseStudy = {
             title: "Building a habit",
             blocks: [
                 {
-                    p: "A practice tool only helps if people come back to it. The home page turns each day into a short path: a warm-up, two focused answers, one answer with everything checked, and a drill. Points, streaks, daily quests, and leaderboards give a light reason to return. Leaderboards show first name and last initial only, and users can opt out.",
+                    p: "A practice tool only helps if people come back to it. The home page turns each day into a short path: a warm-up, two focused answers, one answer with everything checked, and a drill. Points, streaks, daily quests, and leaderboards give a light reason to return. Leaderboards show first name and last initial only, and users can opt out. The day's drill rotates through the ones aimed at the speaker's weakest skill, and Floo the Raccoon, the app's mascot, guides the way and sits thinking while an answer is analyzed.",
                 },
                 {
                     figure: {
                         src: "/assets/images/floont_home.png",
-                        alt: "Home page with a daily path of five steps, a streak and points card, a leaderboard, daily quests, and the week's progress",
+                        alt: "Home page with Floo the Raccoon, a daily path of five steps, a streak and points card, a leaderboard, daily quests, and the week's progress",
                         caption: "Home, with sample data: today's path on the left, and the streak, points, leaderboard, quests, and activity on the right.",
                     },
                 },
@@ -223,6 +224,7 @@ export const floont: CaseStudy = {
                         { term: "A large model in a browser tab.", text: "Running Whisper on the device meant a one-time 80 MB download, a Web Worker to keep the page responsive, and a progress bar so the first wait is clear." },
                         { term: "Browser quirks.", text: "Chrome saves recordings without a duration, which breaks seeking in the audio player. The player works around it by seeking past the end once so the browser computes the duration, then jumping back." },
                         { term: "AI on a free tier.", text: "Early on, Gemini requests timed out. I split delivery and content into separate requests, capped output length, limited the model's reasoning effort, and moved the content check to the background so results show right away." },
+                        { term: "A model that gets stuck.", text: "Newer Gemini models sometimes repeat themselves until they hit the output limit, which loses the whole reply. Changing the prompt and the reply format didn't stop it, so a cut-off reply is retried on a second model, and which model goes first is a setting rather than code." },
                         { term: "Counting a free allowance fairly.", text: "Splitting those requests meant one answer made two calls, and limiting them separately let a free account get a fourth answer checked. The limit now counts each transcript once per day, using a hash and a database lock so simultaneous requests can't slip past it." },
                     ],
                 },
@@ -236,7 +238,7 @@ export const floont: CaseStudy = {
                     list: [
                         { term: "Small pull requests.", text: "Every change goes through a feature branch and a pull request. GitHub Actions run tests, linting, and a production build, and Vercel builds a preview of each one." },
                         { term: "Real transcripts as tests.", text: "When the analyzer gets a real recording wrong, that exact transcript becomes a regression test before the rule is fixed." },
-                        { term: "Pure logic, tested.", text: "Scoring, question picking, pause classification, and filler rules are pure functions, separate from the UI, covered by nearly 500 unit tests." },
+                        { term: "Pure logic, tested.", text: "Scoring, question picking, pause classification, and filler rules are pure functions, separate from the UI, covered by nearly 600 unit tests." },
                         { term: "Notes alongside the code.", text: "Decisions, module notes, and status are kept in a linked notes vault, so the reasons behind a choice are written down." },
                     ],
                 },
@@ -249,7 +251,7 @@ export const floont: CaseStudy = {
                 {
                     list: [
                         "Offering Gemini in the EEA, Switzerland, and the UK, which its free tier doesn't allow.",
-                        "More questions, shaped by what users skip and answer.",
+                        "Tuning the browser's rules against more real recordings.",
                         "More drills, such as spotting your own fillers and clean transitions between points.",
                     ],
                 },
